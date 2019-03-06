@@ -1,1 +1,198 @@
-Hello World
+<!DOCTYPE html>
+<!-- <html lang="en"> -->
+<head>
+    <!-- <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
+
+    <link rel="stylesheet" href="css/main.css"> 
+    <!-- bootstrap --> <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- p5js --> <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/p5.js"></script>
+    <!-- fonts: montserrat, alegreya, signika --> <link href="https://fonts.googleapis.com/css?family=Alegreya|Montserrat|Signika|Indie+Flower" rel="stylesheet">
+    <title>William Beaty's Portfolio</title>
+</head>
+<body>
+    <div id="toggleMenu" onclick="toggleMenu()"></div>
+    <nav id = "menu">
+        <img src = "images/placeHolder.png">
+        <ul>
+            <li><a href="#home" onclick="toggleMenu()">Home</a></li>
+            <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+            <li><a href="#about" onclick="toggleMenu()">About</a></li>
+            <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+        </ul>
+    </nav>
+    <div id="home" class="landingTop" style="height: 500px;" >
+        <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6" id="logoHolder"></div>
+                <div class="col-md-3"></div>
+        </div>
+        <div class="row" >
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <!-- <div id="logoHolder"></div> -->
+                <h1 class="hiddenTop">
+                <!-- <h1 class="hidden"> -->
+                    William Beaty
+                </h1>
+                <p class="hiddenTop">
+                    Programming and Design
+                    <!-- ️️🕹 Game Designer and Programmer <br>
+                    🚀 Developed Phase Drift<br>
+                    💻 Attending Kent State for Computer Science<br> -->
+                </p>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+    </div>
+    <!-- PROEJCTS -->
+    <!-- <div class="row landingSect angledUpDown" > -->
+        <div id="projects" class="row landingSect angledUpProj">
+            <div class="col-md-3" ></div>
+            <div class="col-md-6">
+                <h1 class="hidden">
+                    Projects
+                </h1>
+                <p class="hidden">
+                    ️️What have I been up to?
+                </p>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+        <div class="row landingSect projClick">
+            <div class="col-md-3" ></div>
+            <div class="col-md-8">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h2 class="projGr proGrOdd hidden">
+                            Phase Drift
+                        </h2>
+                        <p class="projGr proGrOdd hidden" style="clear:both;">
+                            An arcade shooter, designed around mobile friendly controls, where you play on new stages every run.  The development of this was very iterative and based on player feedback on the mechanics, weapons, enemies, and so on. 
+                        </p>
+                    </div>
+                
+                    <div class="col-md-6" >
+                        <img class="projGr hiddenImgR" src="images/PhaseDriftIcon.png" style="max-width: 300px; height: auto;">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-1" ></div>
+        </div>
+        <div class="row landingSect projClick">
+            <div class="col-md-3" ></div>
+            <div class="col-md-8">
+                <div class="row">
+                    <div class="col-md-6" >
+                        <img class="projGr hiddenImgL" src="images/ProceduralIcon.png"  style="width: 300px; height: auto;">
+                    </div>
+
+                    <div class="col-md-6">
+                        <h2 class="projGr projGrEven hidden">
+                            Procedural Generation
+                        </h2>
+                        <p class="projGr projGrEven hidden" style="clear:both;">
+                            I’ve created several different methods of procedurally generating levels, including custom solutions for my own projects, like I did for Phase Drift. I’ve also recreated methods from popular games, like Spelunky and The Binding of Isaac, in order to have a template for making tutorials on the subject.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-1" ></div>
+        </div>
+        <div class="row landingSect projClick angledDown sectEnd">
+            <div class="col-md-3" ></div>
+            <div class="col-md-8">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h2 class="projGr proGrOdd hidden">
+                            Other work
+                        </h2>
+                        <p class="projGr proGrOdd hidden" style="clear:both;">
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo ut asperiores dicta veritatis? Modi ipsum, vero eum ullam facilis aspernatur voluptas molestiae sed eligendi ipsam sit magnam incidunt laudantium excepturi!
+                        </p>
+                    </div>
+                
+                    <div class="col-md-6" >
+                        <img class="projGr hiddenImgR" src="images/OtherProjectsIcon.png"  style="width: 300px; height: auto;">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-1" ></div>
+        </div>
+    <!-- </div> -->
+    <!-- About Me -->
+    <div id="about" class="row landingSectAlt">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <h1 class="hidden">
+                    About Me
+                </h1>
+                <p class="hidden">
+                    ️️The Basics
+                </p>
+            </div>
+            <div class="col-md-3"></div>
+    </div>
+    <div class="row landingSectAlt">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <div class="row projGr">
+                <div class="col-lg-8 col-md-12 hidden">
+                    <p>
+                        I’m William Beaty, a programmer and game designer who hails from Cleveland. I’m studying computer science at Kent State University with a concentration in Game Programming. Although my focus is in programming and design, as an independent developer I find myself wearing many hats, from drawing up graphical assets to creating sound effects.
+                    </p>
+                </div>
+                <div class="col-lg-4 col-md-12 hidden">
+                    <img class="hiddenImgR" src="images/profile.png"   style="width: 300px; height: auto;">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+    <div class="row landingSectAlt">
+        <div class="col-md-3"></div>
+        <div class="col-md-7 projGr">
+            <p class="hidden">
+                I got a taste for level design as a child playing excitebike, and played many more games with level editors throughout my childhood. Making these levels was more fun for me than actually playing the normal game, and when I got other people to play them, they came alive. When I was about twelve I realized I could actually make my owns games, and I never looked back.
+            </p>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+    <div class="row landingSectAlt">
+        <div class="col-md-3"></div>
+        <div class="col-md-7">
+            <div class="row projGr">
+                <div class="col-lg-4 col-md-12">
+                    <img class="hiddenImgL" src="images/SaturnsRings.png" style="width: 300px; height: auto;">
+                </div>
+                <div class="col-lg-8 col-md-12">
+                    <p class="hidden">
+                        I love to share what I know with others, and so I’ve created several tutorial videos on youtube. I play guitar and ukulele, and I love music. It’s hard to catch me programming without listening to music. One of my bigger interests is space flight and I’ve been keeping up with recent launches and watching live when I can, as well learning a lot about the technology involved.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+    <!-- CONTACT -->
+    <div id="contact" class="row landingSect angledUp" >
+        <div class="col-md-3"></div>
+        <div class="col-md-6" style="height: 700px">
+            <h1 class="hidden">
+                Contact
+            </h1>
+            <p class="hidden">
+                ️️Want to know more?
+            </p>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+
+    
+    <script src="js/anim.js"></script>
+    <script src = "js/logo.js"></script>
+    <script src = "js/nav.js"></script>
+    <!-- fonts: montserrat, alegreya, signika --> <link href="https://fonts.googleapis.com/css?family=Alegreya|Montserrat|Signika|Indie+Flower" rel="stylesheet">
+</body>
+</html>

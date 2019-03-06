@@ -1,0 +1,310 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+p {
+    font-family: 'Montserrat', sans-serif;
+}
+h1 {
+    font-family: 'Alegreya', serif;
+}
+h2 {
+    font-family: 'Alegreya', serif;
+}
+
+.fade-up-element {
+    position: relative;
+    opacity: 1;
+    top: 0px;
+    transform: rotate(0deg);
+    transition-duration: 120ms;
+    transition-delay: 50ms;
+}
+.fade-up-elementTop {
+    position: relative;
+    opacity: 1;
+    left: 0px;
+    /* transform: rotate(0deg); */
+    transition-duration: 1200ms;
+    transition-delay: 100ms;
+}
+.fade-up-elementImgL {
+    position: relative;
+    opacity: 1;
+    right: 0px;
+    transform: rotate(0deg);
+    transition-duration: 200ms;
+    transition-delay: 100ms;
+}
+.fade-up-elementImgR {
+    position: relative;
+    opacity: 1;
+    left: 0px;
+    transform: rotate(0deg);
+    transition-duration: 200ms;
+    transition-delay: 100ms;
+}
+
+.hidden {
+    position: relative;
+    opacity: 0; 
+    top: 50px;
+    transform: rotate(-5deg);
+}
+
+.hiddenImgL{
+    position: relative;
+    opacity: 0; 
+    right: 50px;
+    transform: rotate(0deg);
+}
+.hiddenImgR{
+    position: relative;
+    opacity: 0; 
+    left: 50px;
+    transform: rotate(0deg);
+}
+
+.hiddenTop {
+    position: relative;
+    opacity: 0; 
+    left: 50px;
+}
+
+.landingTop {
+    /* background: #232323; */
+    background: white;
+    /* background: white; */
+    /* text-align: center; */
+    padding-left: 0px;
+    padding-top: 50px;
+    /* padding-right: 10; */
+    padding-bottom: 0px;
+
+    /* color: #C7373E; */
+    /* color: white; */
+    color: #232323;
+}
+
+.landingTop h1 {
+    font-family: 'Signika', cursive;
+    /* text-align: center; */
+    padding-left: 50px;
+    padding-top: 30px;
+}
+
+.landingTop p {
+    padding-left: 50px;
+    margin-right: 50px;
+    /* text-indent: 0.3em; */
+
+    width: 100%;
+    /* color: white; */
+}
+
+.landingSect {
+    background: #232323;
+    padding-left: 0px;
+    padding-top: 30px;
+    padding-right: 0px;
+    padding-bottom: 30px;
+
+    /* color: #C7373E; */
+    color: white;
+}
+
+.landingSect h1{
+    margin-top: 120px;
+    /* padding-top: 300px; */
+    padding-left: 50px;
+}
+
+.landingSect p{
+    padding-left: 50px;
+    padding-right: 20px;
+}
+
+
+/* .landingSect .projGr {
+    opacity: 1;
+    padding-top: 50px;
+} */
+.landingSect img {
+    /* opacity: 1; */
+    padding-top: 10px;
+    padding-left: 50px;
+    padding-bottom: 10px;
+}
+.landingSect h2 {
+    padding-top: 10px;
+    padding-left: 50px;
+    font-size: 1.5em;
+}
+.landingSect .projGrOdd h2 {
+    padding-top: 50px;
+}
+
+
+/* start projects hover */
+/* need to set child elems to not have border */
+/* .projClick{ */
+    /* border: 5px solid transparent; */
+    /* margin-left: -5px; adjustment for border */
+/* } */
+/* .projClick div{
+    border: none;
+}
+.projClick div{
+    border: none;
+}
+.projClick img{
+    border: none;
+}
+.projClick .projGr{
+    border: none;
+} */
+
+.projClick:hover{
+    background: #363636;
+    /* border: 5px solid #363636; */
+}
+/* .projClick :hover div{
+    border: none;
+}
+.projClick :hover div{
+    border: none;
+}
+.projClick :hover img{
+    border: none;
+}
+.projClick :hover .projGr{
+    border: none;
+} */
+/* end projects hover */
+/* .projClick {
+    border-bottom: 100px;
+} */
+
+.landingSectAlt {
+    background: white;
+    padding-left: 0px;
+    /* padding-top: 100px; */
+    padding-right: 0;
+    padding-bottom: 0px;
+
+    /* color: #C7373E; */
+    color: #232323;
+}
+
+.landingSectAlt h1{
+    margin-top: 0px;
+    /* padding-top: 300px; */
+    padding-left: 50px;
+}
+
+.landingSectAlt p{
+    padding-left: 50px;
+    padding-right: 20px;
+}
+.landingSectAlt img{
+    padding-left: 50px;
+    padding-right: 50px
+}
+.landingSectAlt .projGr {
+    padding-top: 20px;
+}
+.landingSectAlt .projGr p {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.landingSectAlt .projGr img {
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+#logoHolder {
+    /* background: black; */
+    text-align: center;
+}
+.sectEnd {
+    padding-bottom: 100px;
+}
+
+.angledDown {
+    -webkit-clip-path: polygon(0 0, 1600px 0, 1600px 100%, 0% 86%);
+    clip-path: polygon(0 0, 1600px 0, 1600px 100%, 0 86%);
+}
+
+.angledUp {
+    -webkit-clip-path: polygon(0 10%, 1600px 0, 1600px 100%, 0 100%);
+    clip-path: polygon(0 10%, 1600px 0, 1600px 100%, 0 100%);
+}
+.angledUpProj{/* adjust for difference in size of sections */
+    -webkit-clip-path: polygon(0 20%, 1600px 0, 1600px 100%, 0 100%);
+    clip-path: polygon(0 20%, 1600px 0, 1600px 100%, 0 100%);
+}
+
+.angledUpDown {
+    -webkit-clip-path: polygon(0 15%, 1600px 0, 1600px 100%, 0 85%);
+    clip-path: polygon(0 15%, 1600px 0, 1600px 100%, 0 85%);
+}
+
+/* NAV BAR */
+
+nav {
+    width: 350px;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: -350px;
+    z-index: 1000;
+    transition: all ease-in-out 200ms;
+    -webkit-transition:  all ease-in-out 200ms;
+    text-decoration: none;
+}
+
+nav img {
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 30px;
+}
+
+nav ul {
+    padding-left: 40px;
+    padding-top: 60px;
+}
+
+nav ul li {
+    list-style: none;
+    padding: 4px 0px;
+}
+
+nav ul li a {  /*a for anchor */
+    font-family: Arial;
+    font-weight: 300;
+    color: #272727;
+    text-transform: uppercase;
+}
+
+#toggleMenu {
+    width: 50px;
+    height: 50px;
+    background-color: none;
+    background-image: url("../images/menuIcon.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 1050;
+    cursor: pointer;
+    border: 5px solid transparent;
+    border-radius: 2px;
+    transition: all ease-in-out 200ms;
+    -webkit-transition:  all ease-in-out 200ms;
+}
+
+#toggleMenu:hover {
+    opacity: 0.7;
+}
