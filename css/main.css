@@ -230,22 +230,22 @@ h2 {
 }
 
 .angledDown {
-    -webkit-clip-path: polygon(0 0, 1600px 0, 1600px 100%, 0% 86%);
-    clip-path: polygon(0 0, 1600px 0, 1600px 100%, 0 86%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 86%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 86%);
 }
 
 .angledUp {
-    -webkit-clip-path: polygon(0 10%, 1600px 0, 1600px 100%, 0 100%);
-    clip-path: polygon(0 10%, 1600px 0, 1600px 100%, 0 100%);
+    -webkit-clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
+    clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
 }
 .angledUpProj{/* adjust for difference in size of sections */
-    -webkit-clip-path: polygon(0 20%, 1600px 0, 1600px 100%, 0 100%);
-    clip-path: polygon(0 20%, 1600px 0, 1600px 100%, 0 100%);
+    -webkit-clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 100%);
+    clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 100%);
 }
 
 .angledUpDown {
-    -webkit-clip-path: polygon(0 15%, 1600px 0, 1600px 100%, 0 85%);
-    clip-path: polygon(0 15%, 1600px 0, 1600px 100%, 0 85%);
+    -webkit-clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 85%);
+    clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 85%);
 }
 
 /* NAV BAR */
