@@ -24,7 +24,6 @@ h2 {
     position: relative;
     opacity: 1;
     left: 0px;
-    /* transform: rotate(0deg); */
     transition-duration: 1200ms;
     transition-delay: 100ms;
 }
@@ -72,23 +71,16 @@ h2 {
 }
 
 .landingTop {
-    /* background: #232323; */
     background: white;
-    /* background: white; */
-    /* text-align: center; */
     padding-left: 0px;
     padding-top: 50px;
-    /* padding-right: 10; */
     padding-bottom: 0px;
 
-    /* color: #C7373E; */
-    /* color: white; */
     color: #232323;
 }
 
 .landingTop h1 {
     font-family: 'Signika', cursive;
-    /* text-align: center; */
     padding-left: 50px;
     padding-top: 30px;
 }
@@ -96,10 +88,8 @@ h2 {
 .landingTop p {
     padding-left: 50px;
     margin-right: 50px;
-    /* text-indent: 0.3em; */
 
     width: 100%;
-    /* color: white; */
 }
 
 .landingSect {
@@ -109,13 +99,11 @@ h2 {
     padding-right: 0px;
     padding-bottom: 30px;
 
-    /* color: #C7373E; */
     color: white;
 }
 
 .landingSect h1{
     margin-top: 120px;
-    /* padding-top: 300px; */
     padding-left: 50px;
 }
 
@@ -124,13 +112,7 @@ h2 {
     padding-right: 20px;
 }
 
-
-/* .landingSect .projGr {
-    opacity: 1;
-    padding-top: 50px;
-} */
 .landingSect img {
-    /* opacity: 1; */
     padding-top: 10px;
     padding-left: 50px;
     padding-bottom: 10px;
@@ -158,64 +140,25 @@ h2 {
 }
 .contactSect h1{
     margin-top: 120px;
-    /* padding-top: 300px; */
     padding-left: 50px;
 }
 
-/* start projects hover */
-/* need to set child elems to not have border */
-/* .projClick{ */
-    /* border: 5px solid transparent; */
-    /* margin-left: -5px; adjustment for border */
-/* } */
-/* .projClick div{
-    border: none;
-}
-.projClick div{
-    border: none;
-}
-.projClick img{
-    border: none;
-}
-.projClick .projGr{
-    border: none;
-} */
 
 .projClick:hover{
     background: #363636;
-    /* border: 5px solid #363636; */
 }
-/* .projClick :hover div{
-    border: none;
-}
-.projClick :hover div{
-    border: none;
-}
-.projClick :hover img{
-    border: none;
-}
-.projClick :hover .projGr{
-    border: none;
-} */
-/* end projects hover */
-/* .projClick {
-    border-bottom: 100px;
-} */
 
 .landingSectAlt {
     background: white;
     padding-left: 0px;
-    /* padding-top: 100px; */
     padding-right: 0;
     padding-bottom: 0px;
 
-    /* color: #C7373E; */
     color: #232323;
 }
 
 .landingSectAlt h1{
     margin-top: 0px;
-    /* padding-top: 300px; */
     padding-left: 50px;
 }
 
@@ -239,7 +182,6 @@ h2 {
     padding-bottom: 20px;
 }
 #logoHolder {
-    /* background: black; */
     text-align: center;
 }
 .sectEnd {
