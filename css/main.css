@@ -144,6 +144,23 @@ h2 {
     padding-top: 50px;
 }
 
+.contactSect {
+    background: #232323;
+    padding-left: 0px;
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 30px;
+    color: white;
+}
+.contactSect p{
+    padding-left: 50px;
+    padding-right: 20px;
+}
+.contactSect h1{
+    margin-top: 120px;
+    /* padding-top: 300px; */
+    padding-left: 50px;
+}
 
 /* start projects hover */
 /* need to set child elems to not have border */
