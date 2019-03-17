@@ -1,13 +1,15 @@
+//This was originally the image at the top of 
+//the page, but was replaced with a gif of itself 
+//for performance reasons
+
 let angle = 0;
 let length = 150;
 let countDotsFrame = 0;
 let countDotsMax = 501;
 
-
 function setup(){
     var canvas = createCanvas(350,350);
     canvas.parent('logoHolder');
-    // frameRate(30);
 }
 function draw(){
     clear();
@@ -23,8 +25,6 @@ function draw(){
 
     // let avoidX = 75;
     // let avoidY = 75;
-
-    // ellipse()
 
     let angleDelta = 0.05;
     let numThisRing = 10;

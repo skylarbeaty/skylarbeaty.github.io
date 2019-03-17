@@ -12,6 +12,13 @@ h2 {
     font-family: 'Alegreya', serif;
 }
 
+/* dont show horizontal scroll */
+html,body
+{
+    width: 100%;
+    overflow-x: hidden;
+}
+
 .fade-up-element {
     position: relative;
     opacity: 1;
