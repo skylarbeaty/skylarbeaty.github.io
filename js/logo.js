@@ -1,6 +1,6 @@
 //This was originally the image at the top of 
 //the page, but was replaced with a gif of itself 
-//for performance reasons
+//for more consistent performance 
 
 let angle = 0;
 let length = 150;
