@@ -157,12 +157,12 @@ html,body
 
 .landingSectAlt p{
     padding-left: 50px;
-    padding-right: 20px;
+    padding-right: 50px;
 }
-.landingSectAlt img{
-    padding-left: 50px;
-    padding-right: 50px
-}
+/* .landingSectAlt img{
+    padding-left: 0px;
+    padding-right: 0px;
+} */
 .landingSectAlt .projGr {
     padding-top: 20px;
 }
