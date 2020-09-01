@@ -132,10 +132,7 @@ html,body
 .landingSect .projGrOdd h2 {
     padding-top: 50px;
 }
-.landingSect a{
-    color: #004643;
-    text-decoration: underline;
-}
+
 
 .projClick:hover{
     background: #363636;
