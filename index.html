@@ -4,22 +4,12 @@
 
     <link rel="stylesheet" href="css/main.css"> 
     <!-- bootstrap --> <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <!-- p5js --> <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/p5.js"></script>
+    <!-- p5js --> <!-- not used but needed to recreate logo <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/p5.js"></script> -->
     <!-- fonts: montserrat, alegreya, signika --> <link href="https://fonts.googleapis.com/css?family=Alegreya|Montserrat|Signika|Indie+Flower" rel="stylesheet">
     <link rel="icon" type="image/png" href="images/galaxyIcon.png">
     <title>William Beaty's Portfolio</title>
 </head>
 <body>
-    <div id="toggleMenu" onclick="toggleMenu()"></div>
-    <nav id = "menu">
-        <!-- <img src = "images/galaxyLoop.gif"> -->
-        <ul>
-            <li><a href="#home" onclick="toggleMenu()">Home</a></li>
-            <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-            <li><a href="#about" onclick="toggleMenu()">About</a></li>
-            <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-        </ul>
-    </nav>
     <div id="home" class="landingTop" style="height: 550px;" >
         <div class="row">
                 <div class="col-md-3 col-s-0"></div>
@@ -34,7 +24,7 @@
                 <h1 class="hiddenTop">
                     William Beaty
                 </h1>
-                <p class="hiddenTop">Programming and Design</p>
+                <p class="hiddenTop">Programming and Game Design</p>
             </div>
             <div class="col-md-3 col-s-0"></div>
         </div>
@@ -88,7 +78,10 @@
                         Procedural Generation
                     </h2>
                     <p class="projGr projGrEven hidden" style="clear:both;">
-                        I’ve created several different methods of procedurally generating levels, including custom solutions for my own projects, like I did for Phase Drift. I’ve also recreated methods from popular games, like Spelunky and The Binding of Isaac, in order to have a template for making tutorials on the subject.
+                        I’ve created several different methods of procedurally generating levels, including custom solutions for my own projects, like I did for Phase Drift. I’ve also recreated methods from popular games, like 
+                        <a href="https://github.com/wbeaty/binding-of-isaac-style-procedural-generation"> Spelunky</a> and 
+                        <a href="https://github.com/wbeaty/binding-of-isaac-style-procedural-generation"> The Binding of Isaac.</a>
+                        
                         <br><br>
                         The code for these can be found on my 
                         <a href = "https://github.com/wbeaty">GitHub</a> page, and the tutorials are on my 
@@ -144,7 +137,7 @@
                     </p>
                 </div>
                 <div class="col-lg-4 col-md-12 hidden">
-                    <img class="hiddenImgR" src="images/profile.png"   style="width: 300px; height: auto;">
+                    <img class="hiddenImgR" src="images/profile2.png"   style="width: 300px; height: auto;">
                 </div>
             </div>
         </div>
