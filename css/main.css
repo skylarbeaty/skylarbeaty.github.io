@@ -83,7 +83,7 @@ html,body
     padding-top: 50px;
     padding-bottom: 0px;
 
-    color: #232323;
+    color: #2F2235;
 }
 
 .landingTop h1 {
@@ -100,13 +100,13 @@ html,body
 }
 
 .landingSect {
-    background: #232323;
+    background: #B084CC;
     padding-left: 0px;
     padding-top: 30px;
     padding-right: 0px;
     padding-bottom: 30px;
 
-    color: white;
+    color: #2F2235;
 }
 
 .landingSect h1{
@@ -117,6 +117,11 @@ html,body
 .landingSect p{
     padding-left: 50px;
     padding-right: 20px;
+}
+
+.landingSect a{
+    color: #004643;
+    text-decoration: underline;
 }
 
 .landingSect img {
@@ -144,7 +149,7 @@ html,body
     padding-right: 0;
     padding-bottom: 0px;
 
-    color: #232323;
+    color: #2F2235;
 }
 
 .landingSectAlt h1{
@@ -156,10 +161,9 @@ html,body
     padding-left: 50px;
     padding-right: 50px;
 }
-/* .landingSectAlt img{
-    padding-left: 0px;
-    padding-right: 0px;
-} */
+.landingSectAlt img{
+    padding-left: 50px;
+}
 .landingSectAlt .projGr {
     padding-top: 20px;
 }
