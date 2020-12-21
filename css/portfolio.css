@@ -3,11 +3,12 @@
     dark text   Apricot:        #fed0bb
 
 */
-
+html,body{
+    overflow-x: hidden;
+}
 .navbar{
     padding: 10px 20px;
     background-color: #371e30;
-    width: 100vw;
 }
 body{
     background-color: white;
