@@ -1,0 +1,42 @@
+/* colors 
+    dark bg     Dark Purple:    #371e30 
+    dark text   Apricot:        #fed0bb
+
+*/
+
+.navbar{
+    padding: 10px 20px;
+    background-color: #371e30;
+    width: 100vw;
+}
+body{
+    background-color: white;
+    color: #371e30;
+    display: inline-block;
+}
+h2{
+    padding: 2px;
+}
+h3{
+    padding-top: 10px;
+}
+.project-image{
+    float: left;
+    width: 40%;
+    border-radius: 10px;
+    margin-right: 15px;
+}
+.project-image-right{
+    float: right;
+    margin-left: 15px;
+}
+@media only screen and (max-width: 900px) {
+    .project-image, .project-image-right {
+        float: none;
+        width: 90%;
+        margin-left: 15px;
+    }
+}
+.project-row{
+    padding-bottom: 20px;
+}
