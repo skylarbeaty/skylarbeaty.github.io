@@ -6,9 +6,13 @@
 html,body{
     overflow-x: hidden;
 }
-.navbar{
+.main-header{
     padding: 10px 20px;
-    background-color: #371e30;
+    background-color: #371e30 !important;
+    color: white;
+}
+.main-body{
+    margin: 0 10px;
 }
 body{
     background-color: white;
@@ -24,7 +28,7 @@ h3{
 .project-image{
     float: left;
     width: 40%;
-    border-radius: 10px;
+    border-radius: 5px;
     margin-right: 15px;
 }
 .project-image-right{
@@ -37,7 +41,14 @@ h3{
         width: 90%;
         margin-left: 15px;
     }
+    .writeup-image{
+        width: 90%;
+    }
 }
 .project-row{
     padding-bottom: 20px;
+}
+.writeup-image{
+    width: 60%;
+    margin-left: 15px;
 }
