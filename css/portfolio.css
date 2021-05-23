@@ -10,16 +10,16 @@ html,body{
     padding: 10px 20px;
     background-color: #371e30 !important;
     color: white;
-    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); /* angled background */
+    /* clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); /* angled background */
 }
 .main-education{
-    padding: 50px 20px;
+    padding: 20px 20px;
     background-color: #371e30 !important;
     color: white;
-    clip-path: polygon(0 0, 100% 10%, 100% 90%, 0 100%); /* angled background */
+    /* clip-path: polygon(0 0, 100% 10%, 100% 90%, 0 100%); /* angled background */
 }
 .main-body{
-    margin: 0 10px;
+    margin: 10px 10px;
 }
 body{
     background-color: white;
