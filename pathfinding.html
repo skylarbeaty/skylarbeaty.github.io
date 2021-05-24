@@ -64,9 +64,8 @@
                         <p>
                             So far throughout this process I had been testing it by running one random walkable point to another random point, and this implementation does reasonably fast (several hundred times a second). However most of the paths needed in a game are to or from a player, who only moves to a new tile every so often. In this case you could run a pathfinding algorithm once, across the entire grid (or subgrid) and set up parentage of nodes so that you could trace a path child to parent all the way to the player’s node, without running any real calculations. I implemented this using Djikstra’s algorithm, as the advantage of A* is that it doesn’t need to explore as many nodes, but we want to explore all of them. The results showed that running this to find only one path was about twice as slow, but paths found after the first are so fast that over 1000 paths it took 99.6% less time than a fully optimized A*, which was so large a difference it was outside of the significant figures to which I could accurately measure.
                         </p>
-                        
+                        <p class="table-title"><b>Execution Times of Pathfinding Functions</b></p>
                         <table class="table table-bordered">
-                            <caption>Execution Times of Pathfinding Functions</caption>
                             <thead>
                                 <tr>
                                     <th scope="col"></th>

@@ -82,3 +82,7 @@ h3{
 .table{
     width: 90%;
 }
+.table-title{
+    text-align: center;
+    padding-top: 10px;
+}
