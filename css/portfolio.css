@@ -72,10 +72,13 @@ h3{
 }
 .article-image{
     background-color: #371e30;
-    width: 40%;
+    width: 45%;
     border: 5px solid #371e30;
     border-radius: 8px;
 }
 .image-l{
-    width:  70%;
+    width:  90%;
+}
+.table{
+    width: 90%;
 }
