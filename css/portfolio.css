@@ -19,7 +19,7 @@ html,body{
     /* clip-path: polygon(0 0, 100% 10%, 100% 90%, 0 100%); /* angled background */
 }
 .main-body{
-    margin: 10px 10px;
+    margin: 30px 10px;
 }
 body{
     background-color: white;
@@ -58,4 +58,15 @@ h3{
 .writeup-image{
     width: 60%;
     margin-left: 15px;
+}
+.home-button{
+    float: right; 
+    margin-top: 20px;
+}
+.contact-footer{
+    padding: 20px 0px 0px 20px;
+    margin: 0;
+    bottom: 0;
+    background-color: #371e30 !important;
+    color: white;
 }
