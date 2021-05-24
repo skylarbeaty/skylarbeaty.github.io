@@ -80,9 +80,21 @@ h3{
     width:  90%;
 }
 .table{
-    width: 90%;
+    width: 100%;
 }
 .table-title{
     text-align: center;
     padding-top: 10px;
+}
+.snippet{
+    color: white;
+    /* color: #9cdcfe; */
+    background-color: #1e1e1e;
+    padding: 5px 1px 1px 5px;
+    border: 5px solid #371e30;
+    border-radius: 8px;
+}
+.comment{
+    color: #894a77;
+    /* color: #92ac3c; */
 }

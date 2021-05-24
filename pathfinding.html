@@ -57,7 +57,47 @@
                         <p>
                             In A* pathfinding we want to find a path between a start and goal node across a graph of nodes. The algorithm intelligently searches outward from explored nodes by using a cost function to determine which node to explore next. This cost function is a combination of the cost of the path up to that node and a heuristic that guesses how close it is to the goal (usually straight line distance). Here I’m storing the path as a child-parent relationship, adjusting nodes’ parents as it loops through them, until the goal node is reached. This is done in such a way that the goal node's parent is the last node on the path, that node's parent is the 2nd last node on the path, and the nth parent is the nth last node on the path.
                         </p>
-                        <p>[A* code]</p>
+                        <div class="snippet">
+                            <pre><code>public void AStar(Node start, Node goal, System.Action<Stack<Vector3>> callback){<span class="comment">//return a path on the grid to the callback, from start to goal</span>
+    MinHeap<Node> openSet = new MinHeap<Node>(30);<span class="comment">//nodes that are to be looked at</span>
+    <span class="comment">//per node variable that are not needed after search</span>
+    Dictionary<Node, float> gCost = new Dictionary<Node, float>();<span class="comment">//cost of the current best path to the node. gcost = parent.gcost + distance(parent, node)</span>
+    Dictionary<Node, Node> parent = new Dictionary<Node, Node>();<span class="comment">//parent with the smallest gCost</span>
+    
+    <span class="comment">//initialize start node</span>
+    gCost[start] = 0;
+    start.cost = Heuristic(start, goal);<span class="comment">//fCost = gCost (actual Path) + hCost (estimated distance to goal)</span>
+    openSet.Insert(start);
+
+    while(openSet.Count != 0){
+        <span class="comment">//find the node with the lowest fcost</span>
+        Node current = openSet.Peek();<span class="comment">//using a heap here gives O(1) look up</span>
+        
+        if (current == goal){<span class="comment">//if we've reached the end</span>
+            callback(TracePath(current, parent));<span class="comment">//return the path</span>
+            return;
+        }
+        
+        openSet.Remove();
+        <span class="comment">//loop thorugh neighbors of the current node</span>
+        foreach(Node neighbor in current.neighbors){
+            <span class="comment">//see what the cost to get to this neighbor through current would be. Current cost plus cost to get to neighbor. </span>
+            float dist = Vector3.Distance(current.posWorld, neighbor.posWorld);<span class="comment">//returns 1 for straight and 1.5 for corners.</span>
+            float gCostTest = gCost[current] + dist;<span class="comment">//find the gcost through current</span>
+            if (!gCost.ContainsKey(neighbor) || gCostTest < gCost[neighbor]){<span class="comment">//if this is a better path than this node has, make this its parent</span>
+                parent[neighbor] = current;
+                gCost[neighbor] = gCostTest;
+                neighbor.cost = gCost[neighbor] + Heuristic(neighbor,goal);<span class="comment">//fCost</span>
+                if (!openSet.Contains(neighbor))
+                    openSet.Insert(neighbor);<span class="comment">//new node will be inserted and sorted up</span>
+                else
+                    openSet.UpdateUp(neighbor);<span class="comment">//update the node position in the heap since its compare value changed</span>
+            }
+        }
+    }
+    Debug.Log("No path between start and end");
+}</code></pre>
+                        </div>
                         <p>
                             While I was implementing A* pathfinding, I decided to document how it ran at varying stages of optimization. I first made a very basic version of A*, that didn’t even use a heap, as that's the only data structure used in this algorithm that isn't built into C#. Then I implemented the Heap, so it could find the lowest cost node faster, which is called for each time it looks at a new node. This ran about 26% faster than without the heap. Next I wanted to make an optimization with finding neighbors. The implementation was spending a lot of time finding out which nodes are neighbors to another node, but it's not like they are moving. So I set it up to calculate the once at the start, and that made it an additional 23% faster.
                         </p>
@@ -113,7 +153,40 @@
                         <p>
                             This does introduce another problem with this particular implementation of Dijkstra’s versus A*. On very large tilemaps, Djikstra’s time to set up parents could skyrocket. It needs to run every time a player (or goal) moves to a new node. This isn’t a problem I encountered on this project, but it would be relatively easy to implement here. Since it’s a breadth-first search that’s always looking at the lowest path cost node (effectively a circle without terrain weights) it could be easily depth-limited by returning after reaching a certain path cost. It would then need pathfinding agents to use A* for their long trips if they are outside of the area Djikstra’s explored.
                         </p>
-                        <p>[Dijkstra's code]</p>
+                        <div class="snippet">
+                            <pre><code>void Dijkstra(Node source){<span class="comment">//creates a parent structure that can be traced to find a path to one location (the player)</span>
+    MinHeap<Node> openSet = new MinHeap<Node>(30);<span class="comment">//nodes that are to be looked at</span>
+    HashSet<Node> touched = new HashSet<Node>();<span class="comment">//nodes contained have had their costs set. Alternative to resetting all the costs</span>
+
+    <span class="comment">//initialize start node</span>
+    source.cost = 0;<span class="comment">//cost of the current best path to the node. gcost = parent.gcost + distance(parent, node)</span>
+    source.parent = null;
+    touched.Add(source);
+    openSet.Insert(source);
+
+    while(openSet.Count != 0){
+        <span class="comment">//find the node with the lowest cost</span>
+        Node current = openSet.Peek();<span class="comment">//using a heap here gives O(1) look up</span>
+        openSet.Remove();
+
+        <span class="comment">//loop thorugh neighbors of the current node</span>
+        foreach(Node neighbor in current.neighbors){
+            <span class="comment">//see what the cost to get to this neighbor through current would be. Current cost plus cost to get to neighbor. </span>
+            float dist = Vector3.Distance(current.posWorld, neighbor.posWorld);<span class="comment">//returns 1 for straight and 1.5 for corners.</span>
+            float costTest = current.cost + dist;<span class="comment">//find the gcost through current</span>
+            if (!touched.Contains(neighbor) || costTest < neighbor.cost){<span class="comment">//if this is a better path than this node has, make this its parent</span>
+                neighbor.parent = current;
+                neighbor.cost = costTest;
+                touched.Add(neighbor);
+                if (!openSet.Contains(neighbor))
+                    openSet.Insert(neighbor);<span class="comment">//new node will be inserted and sorted up</span>
+                else
+                    openSet.UpdateUp(neighbor);<span class="comment">//update the node position in the heap since its compare value changed</span>
+            }
+        }
+    }
+}</code></pre>
+                        </div>
                     </span>
                 </div>
                 <div class="row project-row">
