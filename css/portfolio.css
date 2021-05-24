@@ -70,3 +70,12 @@ h3{
     background-color: #371e30 !important;
     color: white;
 }
+.article-image{
+    background-color: #371e30;
+    width: 40%;
+    border: 5px solid #371e30;
+    border-radius: 8px;
+}
+.image-l{
+    width:  70%;
+}

@@ -26,24 +26,31 @@
             <div class="main-body">
                 <h3><em>Pathfing and Tilemap</em></h3>
                 <div class="row project-row">
-                    <p>
-                        I make a lot of things in 2D in Unity and a conspicuously absent part of Unity Engine is an implementation of any kind of 2D pathfinding. In the past I had borrowed other people’s public implementations for pathfinding, but after I’d learned about several ways to do this in my coursework, I was eager to make this for myself. I also saw that the Unity Tilemap system has the potential to be an amazing tool to handle some aspects of this system. So i decided to make a novel implementation to A* and Djikstra’s pathfinding by using it in conjunction with the Unity Tilemap system.
-                    </p>
+                    <span>
+                        <p>
+                            I make a lot of things in 2D in Unity and a conspicuously absent part of Unity Engine is an implementation of any kind of 2D pathfinding. 
+                            In the past I had borrowed other people’s public implementations for pathfinding, but after I’d learned about several ways to do this in 
+                            my coursework, I was eager to make this for myself. I also saw that the Unity Tilemap system has the potential to be an amazing tool to 
+                            handle some aspects of this system. So i decided to make a novel implementation to A* and Djikstra’s pathfinding by using it in conjunction 
+                            with the Unity Tilemap system.
+                        </p>
+                        <img src="images/pathfinding1.png" class="article-image" alt="Three enemies chasing the player, with a debug line showinghte path">
+                    </span>
                 </div>
                 <div class="row project-row">
                     <span>
-                        <!-- <img onclick="loadGIF(this)" id="images/PhaseDriftGIF.gif" class="project-image project-image-right" src="images/PhaseDriftGIFThumb.png" alt="Phase Drift GIF"> -->
                         <h4>
                             Working with Tilemap
                         </h4>
                         <p>
                             For the tilemap portion of this, I wanted the ability to set up the environment using tilemap and be able to use that to figure out what tiles are walkable. I found there could be many ways to do this, for my implementation I have a multi-tilemap setup where one tilemap designates the walkable area (any cell with a tile is walkable) and other tilemaps are used for the remainder of the environment. My implementation would also work perfectly with a separate, invisible, tilemap that is only used for pathfinding, but that's more work and needs to be updated separately. You could make adjustments to my system to make it work with one tilemap filled with scriptable objects, but that would be more useful in a system that requires edge weights, for varying terrain.
                         </p>
+                        <img src="images/pathfinding2.png" class="article-image" alt="a Unity tilemap with only the ground tiles active">
+                        <img src="images/pathfinding3.png" class="article-image" alt="the same scene with all tiles active.">
                     </span>
                 </div>
                 <div class="row project-row">
                     <span>
-                        <!-- <img onclick="loadGIF(this)" id="images/PhaseDriftGIF.gif" class="project-image project-image-left" src="images/PhaseDriftGIFThumb.png" alt="Phase Drift GIF"> -->
                         <h4>
                             A* and Djikstra's Algorithms
                         </h4>
@@ -69,7 +76,6 @@
                 </div>
                 <div class="row project-row">
                     <span>
-                        <!-- <img onclick="loadGIF(this)" id="images/NuclearProcGenGIF.gif" class="project-image project-image-right" src="images/NuclearProcGIFThumb.png" alt="Procedural Generation GIF"> -->
                         <h4>
                             Takeaways
                         </h4>
