@@ -98,6 +98,7 @@
     Debug.Log("No path between start and end");
 }</code></pre>
                         </div>
+                        <br>
                         <p>
                             While I was implementing A* pathfinding, I decided to document how it ran at varying stages of optimization. I first made a very basic version of A*, that didn’t even use a heap, as that's the only data structure used in this algorithm that isn't built into C#. Then I implemented the Heap, so it could find the lowest cost node faster, which is called for each time it looks at a new node. This ran about 26% faster than without the heap. Next I wanted to make an optimization with finding neighbors. The implementation was spending a lot of time finding out which nodes are neighbors to another node, but it's not like they are moving. So I set it up to calculate the once at the start, and that made it an additional 23% faster.
                         </p>

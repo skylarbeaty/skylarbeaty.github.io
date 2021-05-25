@@ -76,7 +76,8 @@ h3{
     width:  90%;
 }
 .table{
-    width: 97%;
+    width: 90%;
+    height: auto;
 }
 .table-title{
     text-align: center;
@@ -85,7 +86,7 @@ h3{
 .snippet{
     color: white;
     background-color: #1e1e1e;
-    padding: 5px 1px 1px 5px;
+    padding: 5px 1px 0px 5px;
     border: 5px solid #371e30;
     border-radius: 8px;
 }
@@ -106,6 +107,9 @@ h3{
         width: 90%;
     }
     .snippet{
-        width: 100vw;
+        width: 90vw;
+    }
+    .table{
+        font-size: 0.8em;
     }
 }
