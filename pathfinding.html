@@ -55,7 +55,7 @@
                             A* and Djikstra's Algorithms
                         </h4>
                         <p>
-                            In A* pathfinding we want to find a path between a start and goal node across a graph of nodes. The algorithm intelligently searches outward from explored nodes by using a cost function to determine which node to explore next. This cost function is a combination of the cost of the path up to that node and a heuristic that guesses how close it is to the goal (usually straight line distance). Here I’m storing the path as a child-parent relationship, adjusting nodes’ parents as it loops through them, until the goal node is reached. This is done in such a way that the goal node's parent is the last node on the path, that node's parent is the 2nd last node on the path, and the nth parent is the nth last node on the path.
+                            In A* pathfinding we want to find a path between a start and goal across a graph of nodes. The algorithm intelligently searches outward from explored nodes by using a cost function to determine which node to explore next. This cost function is a combination of the cost of the path up to that node and a heuristic that guesses how close it is to the goal (usually straight line distance). Here I’m storing the path as a child-parent relationship, adjusting nodes’ parents as it loops through them, until the goal node is reached. This is done in such a way that the goal node's parent is the last node on the path, that node's parent is the 2nd last node on the path, and the nth parent is the nth last node on the path.
                         </p>
                         <div class="snippet">
                             <pre><code>public void AStar(Node start, Node goal, System.Action<Stack<Vector3>> callback){<span class="comment">//return a path on the grid to the callback, from start to goal</span>
@@ -132,7 +132,7 @@
                                 </tr>
                                 <tr>
                                     <th scope="row">A* with preloaded neighbors</th>
-                                    <td>0.044s</td>
+                                    <td>0.0044s</td>
                                     <td>0.090s</td>
                                     <td>0.84s</td>
                                     <td>0.84ms</td>
@@ -148,10 +148,10 @@
                         </table>
                         
                         <p>
-                            So why use A* at all? Why bother Implementing it? Dijkstra's Algorithm is only better in this narrow case. Any time there is a path needed that is not to or from the player (or other common goal) A* is much faster. This implementation of Dijkstra’s does not terminate until it’s explored all of the walkable nodes, which gives up every advantage that A* has to make it so fast. It needs to do this to create the proper parent structure so that you can trace a path from any node to the goal.
+                            So why use A* at all? Why bother Implementing it? Dijkstra's Algorithm is only better in this narrow case. That 3.1μs average path trace is only good after the 8ms first run of Dijkstra's has taken place. Any time there is a path needed that is not to or from the player (or other common goal) A* is much faster. This implementation of Dijkstra’s does not terminate until it’s explored all of the walkable nodes, which gives up every advantage that A* has to make it so fast. It needs to do this to create the proper parent structure so that you can trace a path from any node to the goal.
                         </p>
                         <p>
-                            This does introduce another problem with this particular implementation of Dijkstra’s versus A*. On very large tilemaps, Djikstra’s time to set up parents could skyrocket. It needs to run every time a player (or goal) moves to a new node. This isn’t a problem I encountered on this project, but it would be relatively easy to implement here. Since it’s a breadth-first search that’s always looking at the lowest path cost node (effectively a circle without terrain weights) it could be easily depth-limited by returning after reaching a certain path cost. It would then need pathfinding agents to use A* for their long trips if they are outside of the area Djikstra’s explored.
+                            This does introduce another problem with this particular implementation of Dijkstra’s versus A*. On very large tilemaps, Djikstra’s time to set up parents could skyrocket. It needs to run every time a player (or goal) moves to a new node. This isn’t a problem I encountered on this project, but it would be relatively easy to implement here. Since it’s a breadth-first search that’s always looking at the lowest path cost node (effectively a circle without terrain weights), it could be easily depth-limited by returning after reaching a certain path cost. It would then need pathfinding agents to use A* for their long trips if they are outside of the area Djikstra’s explored.
                         </p>
                         <div class="snippet">
                             <pre><code>void Dijkstra(Node source){<span class="comment">//creates a parent structure that can be traced to find a path to one location (the player)</span>
@@ -200,21 +200,24 @@
                         <p>
                             This is one project I see myself actually revisiting in the future. I make games that often need this kind of pathfinding, and in any kind of large project I can see additions I’d like to make. I would certainly want to depth-limit the Djikstra’s, as I mentioned before. I read that you can use scriptable objects to encode data in tile map tiles like weights for difficult terrain, and other things; that would be nice to have available to me.
                         </p>
+                        <p>
+                            See the full code and clone the project on <a href="https://github.com/skylarbeaty/tilemapPathfinding">Github.</a>
+                        </p>
                     </span>
                 </div>
 
-            </div>
-            <div class="contact-footer">
-                <h3><em>Contact</em></h3>
-                <h5>The best way to contact is by email</h5>
-                <a href = "mailto: skylarbeaty93@gmail.com"><p><em>skylarbeaty93@gmail.com</em></p></a>
-                
-                <br><br>
-
-                &#169; 2021 Skylar Beaty
-            </div>
+            <!-- </div> -->
         </div>
         <div class="col-lg-3"></div>
+                    <div class="contact-footer">
+                        <h3><em>Contact</em></h3>
+                        <h5>The best way to contact is by email</h5>
+                        <a href = "mailto: skylarbeaty93@gmail.com"><p><em>skylarbeaty93@gmail.com</em></p></a>
+                        
+                        <br><br>
+        
+                        &#169; 2021 Skylar Beaty
+                    </div>
     </div>
 </body>
 </html>

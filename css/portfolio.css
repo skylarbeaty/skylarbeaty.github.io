@@ -6,6 +6,9 @@
 html,body{
     overflow-x: hidden;
 }
+html{
+    height: 100%
+}
 .main-header{
     padding: 10px 20px;
     background-color: #371e30 !important;
@@ -25,6 +28,9 @@ body{
     background-color: white;
     color: #371e30;
     display: inline-block;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: 0;
 }
 h2{
     padding: 2px;
@@ -51,6 +57,9 @@ h3{
     .writeup-image{
         width: 90%;
     }
+    .article-image{
+        width: 90% !important;
+    }
 }
 .project-row{
     padding-bottom: 20px;
@@ -64,11 +73,14 @@ h3{
     margin-top: 20px;
 }
 .contact-footer{
-    padding: 20px 0px 0px 20px;
-    margin: 0;
+    padding: 20px 0px 20px 20px;
+    margin-bottom: 0px;
+    border-bottom: 0px;
     bottom: 0;
-    background-color: #371e30 !important;
+    /* height: 100%; */
+    background-color: #371e30;
     color: white;
+    overflow: hidden;
 }
 .article-image{
     background-color: #371e30;

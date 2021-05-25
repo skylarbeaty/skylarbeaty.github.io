@@ -30,7 +30,7 @@
                         <p>
                             Beastro is a restaurant management game where you hunt and farm the ingredients for the food you make. 
                             There are three main areas: the restaurant, the farm, and the hunting area. In the restaurant, during business hours, 
-                            customers will come into the restaurant and place an order. The player needs to go to the appropriate cooking station to 
+                            customers will come in and place orders. The player needs to go to the appropriate cooking station to 
                             prepare the order and bring it to the customer in a timely manner. In the farm you can plant different seeds and trees, 
                             water and fertilize them. After some time the crops will be ready and you can reap the ingredients. In the hunting area you 
                             can fight various fantasy monsters and collect their drops. You can also find berry bushes and salt deposits to collect those ingredients.
@@ -52,7 +52,9 @@
                             Recipe System
                         </h4>
                         <p>
-                            One of my major contributions to the restaurant was the recipe system. This took the form of a scriptable object that holds a 
+                            One of my major contributions to the restaurant was the recipe system 
+                            (<a href="https://github.com/almaraze/Capstone-Project-Team-A/blob/development/Restaurant%20-%20Unity%20Game%20Files/Assets/Restaurant/Scripts/Recipe/RecipeSystem.cs">view code</a>). 
+                            This took the form of a scriptable object that holds a 
                             list of all the recipes in the game. This means it could be passed off to whatever object needed that information without any 
                             worry of duplicated information becoming outdated. In this way it served as a single source of truth for what recipes could be made. 
                             This system interacts with the cooking stations (which need to display what can be made), the customers (who need to know what they 
@@ -63,7 +65,7 @@
                             values under a new entry (pictured below). I set this up so that the menu for a cooking station would fill up automatically with 
                             everything on the recipe list that was for that station (pictured above), and the info that shows when hovering is grabbed from here as well. 
                         </p>
-                        <img src="images/BeastroImage3.png" class="article-image image-l" alt="an image of the recipe system's input">
+                        <img src="images/BeastroImage3.png" class="article-image" alt="an image of the recipe system's input">
                     </span>
                 </div>
                 <div class="row project-row">
@@ -75,13 +77,14 @@
                         <p>
                             One of the actions the player can do all over the game is interact with objects. We needed a universal way for this to work between 
                             all interactive objects so that there would be issues with interacting with the wrong object, or even multiple at once. We needed to 
-                            have a system that was easy to have any object work with, and would allow for a pop up to show what you would interact with and would 
+                            have a system that was easy to have any object work with, which would allow for a pop up to show what you would interact with, and would 
                             allow for varying types of objects. I made the Interactive class, which handles all of this quite nicely.
                         </p>
                         <p>
-                            This Interactive class is inherited by every object that you can interact with in the entire game. It requires a collision box 
-                            to define the area the player needs to be to activate it. Whenever the player steps inside this box, that interactive object is 
-                            added to a static list that keeps track of all the interactive objects that the player for which the player is in bounds (usually 
+                            This Interactive class (<a href="https://github.com/almaraze/Capstone-Project-Team-A/blob/development/Restaurant%20-%20Unity%20Game%20Files/Assets/Restaurant/Scripts/Interactables/Interactive.cs">view code</a>) 
+                            is inherited by every object that you can interact with in the entire game. It requires a collision box 
+                            to define the area the player needs to be to activate it. Whenever the player steps inside this box, that object is 
+                            added to a static list that keeps track of all the interactive objects for which the player is in bounds (usually 
                             only a couple objects at a time). When the player presses the interact key, it will figure out what object is closest and call 
                             OnInteract on it, which is a virtual method: defined in the derived class. On the stove (pictured below), for example, pressing 
                             interact will bring up the recipe menu populated with the stove’s recipes. After you’ve selected something to make and it finishes 
@@ -107,18 +110,10 @@
                             the time to plan ahead it would have saved us a lot of work hours.
                         </p>
                         <p>
-                            Another issue with this project was the lack of a proper prototyping stage. After making the proposal , we went into 
-                            production of the game without testing out any design elements of it. This is kind of the nature of how this course is 
-                            set up. However, it meant that we ended up with something that in many ways was very polished, and in other ways it was 
-                            not the complete form of the game. If we had longer to work on it, we probably would have scheduled a good chunk of time 
-                            to play around with the base mechanics. That way we could see what the most fun aspects of the game were and where we 
-                            needed to work on the base design.
-                        </p>
-                        <p>
                             Working on this team was definitely a unique experience for me. I had worked on team projects before, in and out of class, 
                             but never with so many people and all of the same discipline. The course had to be done remotely, meetings and instruction 
                             were mostly handled over Discord. I still found a lot of enjoyment in creating something with my peers. There were many 
-                            communication challenges with running a remote course but we rose to the occasion. This was a large project to complete 
+                            communication challenges with running a remote course, but we rose to the occasion. This was a large project to complete 
                             over a semester and we couldn’t have done it without excellent coordination. 
                         </p>
                     </span>
