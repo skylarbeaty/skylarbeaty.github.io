@@ -66,6 +66,61 @@
                             everything on the recipe list that was for that station (pictured above), and the information that shows when hovering is grabbed from here as well. 
                         </p>
                         <img src="images/BeastroImage3.png" class="article-image image-m" alt="an image of the recipe system's input">
+                        <div class="snippet" style="margin-top: 10px;">
+                            <pre><code>[Serializable]
+public class Recipe{<span class="comment">//holds information and references for a recipe</span>
+    public string name;
+    public string description;
+    public Sprite image;
+    public GameObject spawnable;
+    public List<RecipeSystem.requiredIngredient> requiredIngredients;<span class="comment">//list of ingredients with amount needed</span>
+    public RecipeSystem.station station;
+    public int price;
+    public float cookDuration = 3;
+}
+
+[CreateAssetMenu(fileName = "RecipeSystem", menuName = "Restaurant/RecipeSystem")]
+public class RecipeSystem : ScriptableObject
+{
+    public enum ingredients{beef, chicken, bread, salt, pepper};<span class="comment">//possible ingredients, will need extending. might be moved somewhere else</span>
+    public enum station{stove, blender, coffeePot, frier, cuttingboard, microwave}<span class="comment">//list of cooking stations that needs added to as more stations are made</span>
+    [Serializable]
+    public struct requiredIngredient{<span class="comment">//structure for linking ingredient to the amount needed in the recipe</span>
+        public ingredients ingredient;
+        public int amount;
+    }
+    public List<Recipe> recipes;<span class="comment">//recipe defintions on the asset</span>
+    <span class="comment">//this method needs to be updated every time an ingredient is added</span>
+    public static bool IsIngredient(string name){
+        switch(name){
+            case "beef":
+                return true;
+            case "chicken":
+                return true;
+            case "bread":
+                return true;
+            case "salt":
+                return true;
+            case "pepper":
+                return true;
+            default:
+                return false;
+        }
+    }
+    <span class="comment">//gives percent similar based on how many ingredients are in common. same recipe is 100%, no ingredients in common is 0%</span>
+    public static float PercentSimilar(Recipe compare, Recipe original){
+        float matches = 0, total = 0;
+        foreach(requiredIngredient req in original.requiredIngredients){
+            <span class="comment">//check for ingredient directly, avoiding any issues like one needing a different amount of the same item</span>
+            if (compare.requiredIngredients.Exists(x => x.ingredient == req.ingredient))
+                matches++;
+            total++;
+        }
+        return matches / total;<span class="comment">//output percent between 0 and 1</span>
+    }
+}
+                            </code></pre>
+                        </div>
                     </span>
                 </div>
                 <div class="row project-row">
@@ -91,6 +146,43 @@
                             cooking, you can press interact on it again to pick up the food.
                         </p>
                         <img src="images/BeastroImage4.png" class="article-image image-l" alt="the stoves with collision boxes in front of them">
+                        <div class="snippet" style="margin-top: 10px;">
+                            <pre><code>public class Interactive : MonoBehaviour
+{
+    <span class="comment">//list of all things the player could interact with, as tuple with distance</span>
+    static List<(Interactive i, float dist)> interactions = new List<(Interactive i, float dist)>(); 
+    protected virtual void OnInteract(){}
+    <span class="comment">//...</span>
+    static Interactive PeekInteract(){<span class="comment">//show which object would be interacted with right now</span>
+        <span class="comment">//keep track and iterate</span>
+        float min = 50;<span class="comment">//distance cutoff</span>
+        int index = -1;<span class="comment">//stores closests index so far</span>
+        for (int i = 0; i < interactions.Count; i++){<span class="comment">//serach all the interactions</span>
+            if (interactions[i].dist < min){<span class="comment">//keep track of the closest one</span>
+                min = interactions[i].dist;
+                index = i;
+            }
+        }
+        if (index != -1)<span class="comment">//null check</span>
+            return interactions[index].i;<span class="comment">//return closest interactive</span>
+        return null;<span class="comment">//return null if none were found</span>
+    }
+    <span class="comment">//...</span>
+    void OnTriggerStay(Collider other)<span class="comment">//update the distance while inside</span>
+    {
+        if (other.CompareTag("Player")){
+            float dist = Vector3.Distance(transform.position, other.transform.position);
+            for (int i = 0; i < interactions.Count; i++){<span class="comment">//search for this interactive</span>
+                if (interactions[i].i == this){
+                    interactions[i] = (this, dist);<span class="comment">//update the distance</span>
+                }
+            }
+        }
+    }
+    <span class="comment">//...</span>
+}
+                            </code></pre>
+                        </div>
                     </span>
                 </div>
                 <div class="row project-row">
