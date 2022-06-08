@@ -68,12 +68,12 @@
                         <img src="images/BeastroImage3.png" class="article-image image-m" alt="an image of the recipe system's input">
                         <div class="snippet" style="margin-top: 10px;">
                             <pre><code>[Serializable]
-public class Recipe{<span class="comment">//holds information and references for a recipe</span>
+public class Recipe{//holds information and references for a recipe
     public string name;
     public string description;
     public Sprite image;
     public GameObject spawnable;
-    public List<RecipeSystem.requiredIngredient> requiredIngredients;<span class="comment">//list of ingredients with amount needed</span>
+    public List<RecipeSystem.requiredIngredient> requiredIngredients;//list of ingredients with amount needed
     public RecipeSystem.station station;
     public int price;
     public float cookDuration = 3;
@@ -82,16 +82,15 @@ public class Recipe{<span class="comment">//holds information and references for
 [CreateAssetMenu(fileName = "RecipeSystem", menuName = "Restaurant/RecipeSystem")]
 public class RecipeSystem : ScriptableObject
 {
-    public enum ingredients{beef, chicken, bread, salt, pepper};<span class="comment">//possible ingredients, will need extending. might be moved somewhere else</span>
-    public enum station{stove, blender, coffeePot, frier, cuttingboard, microwave}<span class="comment">//list of cooking stations that needs added to as more stations are made</span>
+    public enum ingredients{beef, chicken, bread, salt, pepper};//possible ingredients, will need extending. might be moved somewhere else
+    public enum station{stove, blender, coffeePot, frier, cuttingboard, microwave}//list of cooking stations that needs added to as more stations are made
     [Serializable]
-    public struct requiredIngredient{<span class="comment">//structure for linking ingredient to the amount needed in the recipe</span>
+    public struct requiredIngredient{//structure for linking ingredient to the amount needed in the recipe
         public ingredients ingredient;
         public int amount;
     }
-    public List<Recipe> recipes;<span class="comment">//recipe defintions on the asset</span>
-    <span class="comment">//this method needs to be updated every time an ingredient is added</span>
-    public static bool IsIngredient(string name){
+    public List<Recipe> recipes;//recipe defintions on the asset
+    public static bool IsIngredient(string name){//cannot loop through an enum so this method needs to be UPDATED every time an INGREDIENT IS ADDED
         switch(name){
             case "beef":
                 return true;
@@ -107,16 +106,14 @@ public class RecipeSystem : ScriptableObject
                 return false;
         }
     }
-    <span class="comment">//gives percent similar based on how many ingredients are in common. same recipe is 100%, no ingredients in common is 0%</span>
-    public static float PercentSimilar(Recipe compare, Recipe original){
+    public static float PercentSimilar(Recipe compare, Recipe original){//gives percent similar based on how many ingredients are in common. same recipe is 100%, no ingredients in common is 0%
         float matches = 0, total = 0;
         foreach(requiredIngredient req in original.requiredIngredients){
-            <span class="comment">//check for ingredient directly, avoiding any issues like one needing a different amount of the same item</span>
-            if (compare.requiredIngredients.Exists(x => x.ingredient == req.ingredient))
+            if (compare.requiredIngredients.Exists(x => x.ingredient == req.ingredient))//check for ingredient directly, avoiding any issues like one needing a different amount of the same item
                 matches++;
             total++;
         }
-        return matches / total;<span class="comment">//output percent between 0 and 1</span>
+        return matches / total;//output percent between 0 and 1
     }
 }
                             </code></pre>
