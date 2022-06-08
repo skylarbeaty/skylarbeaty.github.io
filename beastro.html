@@ -73,7 +73,7 @@ public class Recipe{//holds information and references for a recipe
     public string description;
     public Sprite image;
     public GameObject spawnable;
-    public List<RecipeSystem.requiredIngredient> requiredIngredients;//list of ingredients with amount needed
+    public List&lt;RecipeSystem.requiredIngredient&gt; requiredIngredients;//list of ingredients with amount needed
     public RecipeSystem.station station;
     public int price;
     public float cookDuration = 3;
@@ -89,23 +89,7 @@ public class RecipeSystem : ScriptableObject
         public ingredients ingredient;
         public int amount;
     }
-    public List<Recipe> recipes;//recipe defintions on the asset
-    public static bool IsIngredient(string name){//cannot loop through an enum so this method needs to be UPDATED every time an INGREDIENT IS ADDED
-        switch(name){
-            case "beef":
-                return true;
-            case "chicken":
-                return true;
-            case "bread":
-                return true;
-            case "salt":
-                return true;
-            case "pepper":
-                return true;
-            default:
-                return false;
-        }
-    }
+    public List&lt;Recipe&gt; recipes;//recipe defintions on the asset
     public static float PercentSimilar(Recipe compare, Recipe original){//gives percent similar based on how many ingredients are in common. same recipe is 100%, no ingredients in common is 0%
         float matches = 0, total = 0;
         foreach(requiredIngredient req in original.requiredIngredients){

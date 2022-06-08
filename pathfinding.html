@@ -59,10 +59,10 @@
                         </p>
                         <div class="snippet">
                             <pre><code>public void AStar(Node start, Node goal, System.Action<Stack<Vector3>> callback){<span class="comment">//return a path on the grid to the callback, from start to goal</span>
-    MinHeap<Node> openSet = new MinHeap<Node>(30);<span class="comment">//nodes that are to be looked at</span>
+    MinHeap&lt;Node&gt; openSet = new MinHeap<Node>(30);<span class="comment">//nodes that are to be looked at</span>
     <span class="comment">//per node variable that are not needed after search</span>
-    Dictionary<Node, float> gCost = new Dictionary<Node, float>();<span class="comment">//cost of the current best path to the node. gcost = parent.gcost + distance(parent, node)</span>
-    Dictionary<Node, Node> parent = new Dictionary<Node, Node>();<span class="comment">//parent with the smallest gCost</span>
+    Dictionary&lt;Node, float&gt; gCost = new Dictionary<Node, float>();<span class="comment">//cost of the current best path to the node. gcost = parent.gcost + distance(parent, node)</span>
+    Dictionary&lt;Node, Node&gt; parent = new Dictionary<Node, Node>();<span class="comment">//parent with the smallest gCost</span>
     
     <span class="comment">//initialize start node</span>
     gCost[start] = 0;
@@ -156,8 +156,8 @@
                         </p>
                         <div class="snippet">
                             <pre><code>void Dijkstra(Node source){<span class="comment">//creates a parent structure that can be traced to find a path to one location (the player)</span>
-    MinHeap<Node> openSet = new MinHeap<Node>(30);<span class="comment">//nodes that are to be looked at</span>
-    HashSet<Node> touched = new HashSet<Node>();<span class="comment">//nodes contained have had their costs set. Alternative to resetting all the costs</span>
+    MinHeap&lt;Node&gt; openSet = new MinHeap<Node>(30);<span class="comment">//nodes that are to be looked at</span>
+    HashSet&lt;Node&gt; touched = new HashSet<Node>();<span class="comment">//nodes contained have had their costs set. Alternative to resetting all the costs</span>
 
     <span class="comment">//initialize start node</span>
     source.cost = 0;<span class="comment">//cost of the current best path to the node. gcost = parent.gcost + distance(parent, node)</span>
