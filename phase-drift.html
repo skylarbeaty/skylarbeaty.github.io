@@ -40,13 +40,13 @@
                 </div>
                 <div class="row project-row">
                     <span>
+                        <img onclick="loadGIF(this)" id="images/PhaseDriftGIF.gif" class="project-image" src="images/PhaseDriftGIFThumb.png" alt="Phase Drift Gameplay GIF">
                         <h4>
                             Gameplay
                         </h4>
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius felis a mauris accumsan, quis fermentum orci facilisis. Nullam felis diam, ultrices sit amet ligula vitae, pretium vulputate ipsum. Fusce ultricies enim at urna egestas, sed mattis arcu porttitor. Etiam est mi, porttitor at nulla ac, gravida pretium est. Sed aliquam, sem ut tincidunt vehicula, ante neque pulvinar sapien, at lacinia tellus elit id dui. Sed et aliquam tortor, id mollis nunc. Vivamus sit amet auctor justo, id laoreet est. Nullam convallis tristique mi, nec tincidunt nunc molestie vel. Vivamus sit amet sem nulla. In ac consectetur nisl. Ut mi dui, imperdiet id odio euismod, fermentum condimentum tellus. 
                         </p>
-                        <img onclick="loadGIF(this)" id="images/PhaseDriftGIF.gif" class="image-l" src="images/PhaseDriftGIFThumb.png" alt="Phase Drift Gameplay GIF">
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius felis a mauris accumsan, quis fermentum orci facilisis. Nullam felis diam, ultrices sit amet ligula vitae, pretium vulputate ipsum. Fusce ultricies enim at urna egestas, sed mattis arcu porttitor. Etiam est mi, porttitor at nulla ac, gravida pretium est. Sed aliquam, sem ut tincidunt vehicula, ante neque pulvinar sapien, at lacinia tellus elit id dui. Sed et aliquam tortor, id mollis nunc. Vivamus sit amet auctor justo, id laoreet est. Nullam convallis tristique mi, nec tincidunt nunc molestie vel. Vivamus sit amet sem nulla. In ac consectetur nisl. Ut mi dui, imperdiet id odio euismod, fermentum condimentum tellus. 
                         </p>
@@ -63,10 +63,10 @@
                         <p>
                             Most of the old arcade shooters are designed so that they restart every time you die, which is something I enjoy in the roguelike games I play as well. Unlike rogue-likes, many of the old arcade shooters have the exact same levels every time, which leads to strategies like robotically racing to memorized safe spots. I avoided this, and generally made the game more interesting to replay, by adding random stage generation.
                         </p>
+                        <img onclick="loadGIF(this)" id="images/PhaseDriftLevelSpawnGIF.gif" class="project-image-right" width="40%" src="images/PhaseDriftLevelSpawnStatic.png" alt="Level Spawner GIF">
                         <p>
                             I had already made a system that accepts a 2D pixel image to spawn the level, as a simple tool to make designing them easier. So the system I made to generate levels outputs the same thing, meaning the templates I eventually made were simple to make as well.
                         </p>
-                        <img onclick="loadGIF(this)" id="images/PhaseDriftLevelSpawnGIF.gif" class="image-l" src="images/PhaseDriftLevelSpawnStatic.png" alt="Level Spawner GIF">
                         <p>
                             The system works by pasting enemy layouts on top of each other. Combining multiple templates on top of each other compounds the output of my work. Each enemy in the game had multiple sets of templates that varied in the amount. The game maintains a progression by introducing new enemies in a set order through the game.
                         </p>
@@ -91,20 +91,138 @@
                             </li>
                         </ul>
                     </span>
+                    <div class="snippet" style="margin-top: 10px;">
+                        <code>
+                            <pre class="scroll">public class SpawnMapGenerator : MonoBehaviour 
+{
+    <span class="comment">//...</span>
+    public Texture2D CreateLevel()
+    {
+        <span class="comment">//make a list of the enemy types for the level</span>
+        string[] names = GetNamesForLevel();
+        <span class="comment">//this enemy layout texture will be passed to the level creator</span>
+        return CreateLevelTexture(enemyNames[0],enemyNames[1],enemyNames[2],enemyNames[3],enemyNames[4]);
+    }	
+    public Texture2D CreateLevelTexture(string firstEnemyName, string secondEnemyName, string thirdEnemyName, string forthEnemyName, string fifthEnemyName)
+    {
+        <span class="comment">//grab a template for each enemy listed, some may be blank</span>
+        Texture2D enemyLayoutOne = TexFromArray(ArrayFromName(firstEnemyName), UsedListFromName(firstEnemyName));
+        Texture2D enemyLayoutTwo = TexFromArray(ArrayFromName(secondEnemyName), UsedListFromName(secondEnemyName));
+        Texture2D enemyLayoutThree = TexFromArray(ArrayFromName(thirdEnemyName), UsedListFromName(thirdEnemyName));
+        Texture2D enemyLayoutFour = TexFromArray(ArrayFromName(forthEnemyName), UsedListFromName(forthEnemyName));
+        Texture2D enemyLayoutFive = TexFromArray(ArrayFromName(fifthEnemyName), UsedListFromName(fifthEnemyName));
+        <span class="comment">//overlay enemy templates to create one texture</span>
+        Texture2D levelTex = BlankTex();
+        OverlapEnemy(ref levelTex,enemyLayoutOne);
+        OverlapEnemy(ref levelTex,enemyLayoutTwo);
+        OverlapEnemy(ref levelTex,enemyLayoutThree);
+        OverlapEnemy(ref levelTex,enemyLayoutFour);
+        OverlapEnemy(ref levelTex,enemyLayoutFive);
+        return levelTex;
+    }
+    void OverlapEnemy(ref Texture2D baseTex, Texture2D overlapTex)
+    {
+        <span class="comment">//overwrites the base texture wherever the overlap texture is opaque</span>
+        for (int x = 0; x &lt; overlapTex.width; x++){
+            for (int y = 0; y &lt; overlapTex.height; y++){
+                Color pixel = overlapTex.GetPixel(x,y);
+                    if (pixel.a != 0){<span class="comment">//opacity check</span>
+                        baseTex.SetPixel(x,y,pixel);
+                }
+            }
+        }
+    }
+    <span class="comment">//...</span>
+    string[] GetNamesForLevel()
+    {
+        <span class="comment">//prepare a list of enemy names appropriate for this stage</span>
+        int sector = RunController.ThisSector;
+        int stage = RunController.ThisStage;
+        int numberSectorsPremade = 5;
+        if (sector &lt;= numberSectorsPremade){<span class="comment">//the first sectors introduce each enemy, one by one </span>
+            return PremadeLevels(sector,stage);
+        }else{<span class="comment">//after all enemies are introduced, the combinations of them continually get harder</span>
+            return GeneratedLevel(sector,stage);
+        }
+    }
+    <span class="comment">//...</span>
+}</pre>
+                        </code>
+                    </div>
                 </div>
                 <div class="row project-row">
-                    <span>
-                        <h4>
-                            User Interface
-                        </h4>
-                        <p>
-                            The Menus in Phase Drift are very modular. I implemented a system to manage the menus so that I could use the exact same menus in game as on the start screen. It also benefited me by making menu creation and animation easier. And implemented duplication of work in many ways.
-                        </p>
-                        <p>
-                            Each submenu has its own prefab and script. The prefabs contain the Unity UI canvas. The script controls any special behavior for the menu, links buttons to actions, and inherits basic menu behavior (like going back a menu, triggering routine animations). This system also keeps the submenus well-contained from each other. Generally adding a submenu could be a quite tedious task by default, but with this system I spent more of that time making cool layouts and animations.
-                        </p>
-                        <img onclick="loadGIF(this)" id="images/PhaseDriftMenuGIF.gif" class="image-l" src="images/PhaseDriftMenuStatic.png" alt="Level Spawner GIF">
-                    </span>
+                    <h4>
+                        User Interface
+                    </h4>
+                    <p>
+                        The Menus in Phase Drift are very modular. I implemented a system to manage the menus so that I could use the exact same menus in game as on the start screen. It also benefited me by making menu creation and animation easier. And implemented duplication of work in many ways.
+                    </p>
+                    <p>
+                        Each submenu has its own prefab and script. The prefabs contain the Unity UI canvas. The script controls any special behavior for the menu, links buttons to actions, and inherits basic menu behavior (like going back a menu, triggering routine animations). This system also keeps the submenus well-contained from each other. Generally adding a submenu could be a quite tedious task by default, but with this system I spent more of that time making cool layouts and animations.
+                    </p>
+                    <div class="row">
+                        <img width="100%" onclick="loadGIF(this)" id="images/PhaseDriftMenuGIF.gif" class="project-gif" src="images/PhaseDriftMenuStatic.png" alt="Level Spawner GIF">
+                        <div class="snippet-float" style="margin-top: 10px;">
+                            <code>
+                                <pre class="scroll">public abstract class Menu<T> : Menu where T : Menu<T>
+{    
+    public static T Instance { get; private set; }
+    
+    protected virtual void Awake()
+    {
+        Instance = (T)this;
+    }
+
+    protected virtual void OnDestroy()
+    {
+        Instance = null;
+    }
+
+    protected static void Open()
+    {
+        <span class="comment">//creates an Instance of T Menu, if it doesn't exist yet</span>
+        if (Instance == null)
+            MenuManager.Instance.CreateInstance<T>();
+        else
+            Instance.gameObject.SetActive(true);
+        
+        MenuManager.Instance.OpenMenu(Instance);
+    }
+
+    protected static void Close()
+    {
+        if (Instance == null)
+        {
+            Debug.LogErrorFormat("Trying to close menu {0} but Instance is null", typeof(T));
+            return;
+        }
+
+        MenuManager.Instance.CloseMenu(Instance);
+    }
+
+    public override void OnBackPressed()
+    {
+        Close();
+    }
+}
+
+public abstract class Menu : MonoBehaviour
+{
+    <span class="comment">//Unity Editor interface</span>
+    [HeaderAttribute("Menu Fields")]
+    [Tooltip("Destroy the Game Object when menu is closed (reduces memory usage)")]
+    public bool DestroyWhenClosed = true;
+
+    [Tooltip("Disable menus that are under this one in the stack")]
+    public bool DisableMenusUnderneath = true;
+    public bool animates = false;
+
+    public abstract void OnBackPressed();
+    public abstract void AnimateFromBase();
+}</pre>
+                            </code>
+                        </div>
+                    </div>
                 </div>
                 <div class="row project-row">
                     <span>

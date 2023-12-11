@@ -45,6 +45,12 @@ h3{
 .project-row{
     padding-bottom: 20px;
 }
+.project-gif{
+    width: 30%;
+    border-radius: 5px;
+    margin-right: 15px;
+    padding:10px 0px 0px 0px;
+}
 .writeup-image{
     width: 60%;
     margin-left: 15px;
@@ -89,6 +95,19 @@ h3{
     padding: 5px 1px 0px 5px;
     border: 5px solid #371e30;
     border-radius: 8px;
+}
+.snippet-float{
+    color: #1e1e1e;
+    background-color: #ede6eb;
+    border: 5px solid #371e30;
+    border-radius: 8px;
+
+    float: right;
+    width: 65%;
+}
+.scroll{
+    height: 470px;
+    overflow: auto;
 }
 .comment{
     /* color: #371e30; */
