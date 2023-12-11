@@ -130,15 +130,15 @@ public class RecipeSystem : ScriptableObject
                             <pre><code>public class Interactive : MonoBehaviour
 {
     <span class="comment">//list of all things the player could interact with, as tuple with distance</span>
-    static List<(Interactive i, float dist)> interactions = new List<(Interactive i, float dist)>(); 
+    static List&lt;(Interactive i, float dist)> interactions = new List&lt;(Interactive i, float dist)>(); 
     protected virtual void OnInteract(){}
     <span class="comment">//...</span>
     static Interactive PeekInteract(){<span class="comment">//show which object would be interacted with right now</span>
         <span class="comment">//keep track and iterate</span>
         float min = 50;<span class="comment">//distance cutoff</span>
         int index = -1;<span class="comment">//stores closests index so far</span>
-        for (int i = 0; i < interactions.Count; i++){<span class="comment">//serach all the interactions</span>
-            if (interactions[i].dist < min){<span class="comment">//keep track of the closest one</span>
+        for (int i = 0; i &lt; interactions.Count; i++){<span class="comment">//serach all the interactions</span>
+            if (interactions[i].dist &lt; min){<span class="comment">//keep track of the closest one</span>
                 min = interactions[i].dist;
                 index = i;
             }
@@ -152,7 +152,7 @@ public class RecipeSystem : ScriptableObject
     {
         if (other.CompareTag("Player")){
             float dist = Vector3.Distance(transform.position, other.transform.position);
-            for (int i = 0; i < interactions.Count; i++){<span class="comment">//search for this interactive</span>
+            for (int i = 0; i &lt; interactions.Count; i++){<span class="comment">//search for this interactive</span>
                 if (interactions[i].i == this){
                     interactions[i] = (this, dist);<span class="comment">//update the distance</span>
                 }
