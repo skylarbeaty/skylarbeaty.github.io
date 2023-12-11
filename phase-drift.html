@@ -79,9 +79,6 @@
                             </li>
                             <li>
                                 For each enemy, select the correct template set, and randomly pick a template
-                            </li>                        
-                            <li>
-                                For each enemy, select the correct template set, and randomly pick a template
                             </li>
                             <li>
                                 Stack enemy templates from easiest to hardest enemy
@@ -100,7 +97,7 @@
     {
         <span class="comment">//make a list of the enemy types for the level</span>
         string[] names = GetNamesForLevel();
-        <span class="comment">//this enemy layout texture will be passed to the level creator</span>
+        <span class="comment">//this enemy layout texture will be passed to the level spawner</span>
         return CreateLevelTexture(enemyNames[0],enemyNames[1],enemyNames[2],enemyNames[3],enemyNames[4]);
     }	
     public Texture2D CreateLevelTexture(string firstEnemyName, string secondEnemyName, string thirdEnemyName, string forthEnemyName, string fifthEnemyName)
