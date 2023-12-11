@@ -1,8 +1,3 @@
-/* colors 
-    dark bg     Dark Purple:    #371e30 
-    dark text   Apricot:        #fed0bb
-
-*/
 html,body{
     overflow-x: hidden;
 }
@@ -13,13 +8,11 @@ html{
     padding: 10px 20px;
     background-color: #371e30 !important;
     color: white;
-    /* clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); /* angled background */
 }
 .main-education{
     padding: 20px 20px;
     background-color: #371e30 !important;
     color: white;
-    /* clip-path: polygon(0 0, 100% 10%, 100% 90%, 0 100%); /* angled background */
 }
 .main-body{
     margin: 30px 10px;
@@ -77,6 +70,8 @@ h3{
 }
 .image-l{
     width:  90%;
+    padding-left: 5%;
+    margin-bottom: 10px;
 }
 .table{
     width: 90%;

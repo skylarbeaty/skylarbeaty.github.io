@@ -40,12 +40,70 @@
                 </div>
                 <div class="row project-row">
                     <span>
-                    
+                        <h4>
+                            Gameplay
+                        </h4>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius felis a mauris accumsan, quis fermentum orci facilisis. Nullam felis diam, ultrices sit amet ligula vitae, pretium vulputate ipsum. Fusce ultricies enim at urna egestas, sed mattis arcu porttitor. Etiam est mi, porttitor at nulla ac, gravida pretium est. Sed aliquam, sem ut tincidunt vehicula, ante neque pulvinar sapien, at lacinia tellus elit id dui. Sed et aliquam tortor, id mollis nunc. Vivamus sit amet auctor justo, id laoreet est. Nullam convallis tristique mi, nec tincidunt nunc molestie vel. Vivamus sit amet sem nulla. In ac consectetur nisl. Ut mi dui, imperdiet id odio euismod, fermentum condimentum tellus. 
+                        </p>
+                        <img onclick="loadGIF(this)" id="images/PhaseDriftGIF.gif" class="image-l" src="images/PhaseDriftGIFThumb.png" alt="Phase Drift Gameplay GIF">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius felis a mauris accumsan, quis fermentum orci facilisis. Nullam felis diam, ultrices sit amet ligula vitae, pretium vulputate ipsum. Fusce ultricies enim at urna egestas, sed mattis arcu porttitor. Etiam est mi, porttitor at nulla ac, gravida pretium est. Sed aliquam, sem ut tincidunt vehicula, ante neque pulvinar sapien, at lacinia tellus elit id dui. Sed et aliquam tortor, id mollis nunc. Vivamus sit amet auctor justo, id laoreet est. Nullam convallis tristique mi, nec tincidunt nunc molestie vel. Vivamus sit amet sem nulla. In ac consectetur nisl. Ut mi dui, imperdiet id odio euismod, fermentum condimentum tellus. 
+                        </p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius felis a mauris accumsan, quis fermentum orci facilisis. Nullam felis diam, ultrices sit amet ligula vitae, pretium vulputate ipsum. Fusce ultricies enim at urna egestas, sed mattis arcu porttitor. Etiam est mi, porttitor at nulla ac, gravida pretium est. Sed aliquam, sem ut tincidunt vehicula, ante neque pulvinar sapien, at lacinia tellus elit id dui. Sed et aliquam tortor, id mollis nunc. Vivamus sit amet auctor justo, id laoreet est. Nullam convallis tristique mi, nec tincidunt nunc molestie vel. Vivamus sit amet sem nulla. In ac consectetur nisl. Ut mi dui, imperdiet id odio euismod, fermentum condimentum tellus. 
+                        </p>
                     </span>
                 </div>
                 <div class="row project-row">
                     <span>
-                    
+                        <h4>
+                            Procedural Stages
+                        </h4>
+                        <p>
+                            Most of the old arcade shooters are designed so that they restart every time you die, which is something I enjoy in the roguelike games I play as well. Unlike rogue-likes, many of the old arcade shooters have the exact same levels every time, which leads to strategies like robotically racing to memorized safe spots. I avoided this, and generally made the game more interesting to replay, by adding random stage generation.
+                        </p>
+                        <p>
+                            I had already made a system that accepts a 2D pixel image to spawn the level, as a simple tool to make designing them easier. So the system I made to generate levels outputs the same thing, meaning the templates I eventually made were simple to make as well.
+                        </p>
+                        <img onclick="loadGIF(this)" id="images/PhaseDriftLevelSpawnGIF.gif" class="image-l" src="images/PhaseDriftLevelSpawnStatic.png" alt="Level Spawner GIF">
+                        <p>
+                            The system works by pasting enemy layouts on top of each other. Combining multiple templates on top of each other compounds the output of my work. Each enemy in the game had multiple sets of templates that varied in the amount. The game maintains a progression by introducing new enemies in a set order through the game.
+                        </p>
+                        <p>
+                            Here’s a rundown of how it generates:
+                        </p>
+                        <ul>
+                            <li>
+                                Selects 3-5 enemies to use in varying difficulties, depending on the current stage
+                            </li>
+                            <li>
+                                For each enemy, select the correct template set, and randomly pick a template
+                            </li>                        
+                            <li>
+                                For each enemy, select the correct template set, and randomly pick a template
+                            </li>
+                            <li>
+                                Stack enemy templates from easiest to hardest enemy
+                            </li>
+                            <li>
+                                Pass final image to the spawner to start the level
+                            </li>
+                        </ul>
+                    </span>
+                </div>
+                <div class="row project-row">
+                    <span>
+                        <h4>
+                            User Interface
+                        </h4>
+                        <p>
+                            The Menus in Phase Drift are very modular. I implemented a system to manage the menus so that I could use the exact same menus in game as on the start screen. It also benefited me by making menu creation and animation easier. And implemented duplication of work in many ways.
+                        </p>
+                        <p>
+                            Each submenu has its own prefab and script. The prefabs contain the Unity UI canvas. The script controls any special behavior for the menu, links buttons to actions, and inherits basic menu behavior (like going back a menu, triggering routine animations). This system also keeps the submenus well-contained from each other. Generally adding a submenu could be a quite tedious task by default, but with this system I spent more of that time making cool layouts and animations.
+                        </p>
+                        <img onclick="loadGIF(this)" id="images/PhaseDriftMenuGIF.gif" class="image-l" src="images/PhaseDriftMenuStatic.png" alt="Level Spawner GIF">
                     </span>
                 </div>
                 <div class="row project-row">
