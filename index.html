@@ -1,4 +1,4 @@
-!<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
@@ -10,6 +10,56 @@
         <title>Skylar Liz Portfolio</title>
     </head>
     <body>
+        <nav id="desktop-nav">
+            <div class="name">Skylar Liz</div>
+            <div>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        <nav id="mobile-nav">
+            <div class="name">Skylar Liz</div>
+            <div class="mobile-menu">
+                <div class="hamburger-icon" onclick="toggleHamburger()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="mobile-links">
+                    <li><a href="#about" onclick="toggleHamburger()">About</a></li>
+                    <li><a href="#projects" onclick="toggleHamburger()">Projects</a></li>
+                    <li><a href="#education" onclick="toggleHamburger()">Education</a></li>
+                    <li><a href="#contact" onclick="toggleHamburger()">Contact</a></li>
+                </div>
+            </div>
+        </nav>
+        <section id="hero">
+            <div class="pic-container">
+                <image src="media/profile-pic-circle.png" alt="picture of Skylar Liz"></image>
+            </div>
+            <div class="hero-text">
+                <p class="hero-p1">Hello, I'm</p>
+                <h1>Skylar Liz Beaty</h1>
+                <p class="hero-p2">Game Programmer</p>
+                <div class="btn-container">
+                    <button class="btn btn-color-2" onclick="">Résumé</button>
+                    <button class="btn btn-color-1" onclick="location.href='#contact'">Contact</button>
+                </div>
+                <div id="social-container">
+                    <img src="media/github-logo.png" alt="github link" 
+                        class="icon" onclick="location.href='https\://github.com/skylarbeaty'">
+                    <img src="media/twitter-logo.png" alt="twitter link" 
+                        class="icon" onclick="location.href='https\://twitter.com/skylarbeaty'">
+                </div>
+            </div>
+        </section>
+        <section id="about">
+            
+        </section>
         <script src="js/nav.js" async defer></script>
     </body>
 </html>
