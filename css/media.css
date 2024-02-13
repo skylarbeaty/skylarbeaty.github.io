@@ -6,3 +6,9 @@
         display: flex;
     }
 }
+
+/* @media screen and (max-midth: 600px){
+    .btn-container{
+        flex-wrap: wrap;
+    }
+} */
