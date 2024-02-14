@@ -3,8 +3,10 @@
 :root{
     --black: #343434;
     --white: #fff9f9;
+    --light-grey: #F7EEEE;
     --grey: #949191;
     --blue-hyper: #d0f5f7;
+    --transparent: rgba(0, 0, 0, 0);
 }
 
 html{
@@ -32,6 +34,7 @@ html{
 
 a, .btn{
     transition: all 300ms ease;
+    background: none;
 }
 
 /* #region Nav Desktop */
@@ -115,7 +118,7 @@ a:hover{
     max-height: 300px;
 }
 
-/* Hemburger Icon */
+/* Hamburger Icon */
 .hamburger-icon{
     display: flex;
     flex-direction: column;
@@ -220,6 +223,7 @@ section{
 }
 
 .btn-container{
+    background: none;
     display: flex;
     justify-content: center;
     gap: 1rem;
@@ -261,6 +265,108 @@ section{
 .btn-container{
     gap: 1rem;
 }
+
+/* Projects */
+#projects {
+    height: 130vh;
+}
+
+#projects .section-h1{
+    margin-bottom: 2rem;
+}
+
+#projects .section-container{
+    justify-content: center;
+}
+
+#projects .pic-container{
+    display: flex;
+    height: 350px;
+    width: 350px;
+    margin: auto 0;
+}
+
+#projects .pic-container img{
+    border-radius: 15% 4%;
+}
+
+#projects .text-container{
+    max-width: 30vw;
+    padding: 1rem;
+    align-self: center;
+}
+
+.details-container{
+    background: none;
+    height: 375px;
+    width: 275px;
+    border: solid var(--light-grey) 3px;
+    border-radius: 5%;
+    text-align: center;
+    justify-items: center;
+    padding: 2rem;
+    margin: 2rem;
+}
+
+.project-thumb{
+    background: none;
+    width:100%;
+    justify-content: center;
+}
+
+.project-thumb img{
+    width: 80%;
+    border-radius: 5%;
+}
+
+.gif-swap{
+    display: none;
+}
+
+.details-container:hover{
+    background-color: var(--light-grey);
+}
+
+.details-container:hover .gif-swap{
+    display: unset;
+}
+
+.details-container:hover .still-swap{
+    display: none;
+}
+
+.project-text{
+    background: none;
+    text-align: center;
+    align-self: center;
+    padding: 0.5rem;
+}
+
+.project-name{
+    background: none;
+    font-size: 1.2rem;
+}
+
+.project-text p{
+    background: none;
+    font-size: 0.9rem;
+}
+
+.preload{
+    display: none;
+}
+
+.preload.loaded{
+    display: unset;
+}
+
+.preload-still.loaded{
+    display: none;
+}
+
+/* .details-container .btn-container{
+    justify-content: flex-end;
+} */
 
 /* About */
 
