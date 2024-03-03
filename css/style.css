@@ -162,7 +162,7 @@ a:hover{
 /* #region Sections */
 section{
     padding: 4vh;
-    height: 96vh;
+    /* height: 100vh; */
     margin: 0 10rem;
     box-sizing: border-box;
     min-height: fit-content;
@@ -176,7 +176,7 @@ section{
     display: flex;
     justify-content: center;
     gap: 5rem;
-    height: 80vh;
+    height: 88vh;
 }
 
 #hero .pic-container{
@@ -268,7 +268,7 @@ section{
 
 /* Projects */
 #projects {
-    height: 130vh;
+    height: 1600px;
 }
 
 #projects .section-h1{
@@ -306,6 +306,10 @@ section{
     justify-items: center;
     padding: 2rem;
     margin: 2rem;
+}
+
+.details-container .btn-container{
+    width: 275px;
 }
 
 .project-thumb{
@@ -368,7 +372,70 @@ section{
     justify-content: flex-end;
 } */
 
+
+/* Education */
+
+#education .section-h1{
+    margin-bottom: 2rem;
+}
+
+#education .section-container{
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+}
+
+#education .pic-container img{
+    border-radius: 50%;
+    width: 500px;
+    height: 500px;
+    object-fit: cover;
+}
+
+.section-text{
+    width: 40%;
+    align-self: center;
+    text-align: center;
+}
+
+.section-text h1{
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 2rem;
+    padding: 1rem, 0, 0.5rem, 0;
+}
+.section-text p{
+    padding: 0.5rem;
+}
+
 /* About */
 
-/* #endregion */
+#about .section-h1{
+    margin-bottom: 2rem;
+}
 
+#about .section-container{
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+}
+
+#about .pic-container img{
+    border-radius: 5%;
+    width: 300px;
+    /* height: 500px; */
+    object-fit: cover;
+}
+
+#about .section-text{
+    width: 30%;
+}
+
+#about .section-text p{
+    font-size: 1.1rem;
+}
+
+#about .pic-container .museum-goers-pic{
+    width: 500px;
+}
+
+/* #endregion */
