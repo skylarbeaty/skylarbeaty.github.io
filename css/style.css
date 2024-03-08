@@ -9,6 +9,7 @@
     --transparent: rgba(0, 0, 0, 0);
     --light-btn: #344966;
     --dark-btn: #7F96FF;
+    --comment: #1b8c39;
 }
 
 html{
@@ -470,4 +471,42 @@ section{
 .contact-container p{
     font-size: 1.7rem;
 }
+/* #endregion */
+
+/* #region write ups */
+
+/* #beastro-body{
+    align-items: center;
+    justify-content: center;
+} */
+
+#beastro-body .section-container{
+    display: block;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+}
+
+#beastro-body p{
+    margin: 1rem 0;
+}
+
+#beastro-body img{
+    width: 70%;
+}
+
+.snippet{
+    color: var(--black);
+    background-color: var(--white);
+    padding: 5px 1px 0px 5px;
+    border: 5px solid var(--light-btn);
+    border-radius: 8px;
+    overflow: auto;
+}
+
+.comment{
+    color: var(--comment);
+}
+
 /* #endregion */
