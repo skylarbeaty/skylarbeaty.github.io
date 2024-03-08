@@ -502,11 +502,32 @@ section{
     padding: 5px 1px 0px 5px;
     border: 5px solid var(--light-btn);
     border-radius: 8px;
+    width: 80%;
     overflow: auto;
 }
 
 .comment{
     color: var(--comment);
+}
+
+#phase-drift-body .section-container{
+    display: block;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+}
+
+#phase-drift-body p{
+    margin: 1rem 0;
+}
+
+#phase-drift-body img{
+    width: 50%;
+}
+
+#phase-drift-body li{
+    margin: 0 1.5rem;
 }
 
 /* #endregion */
