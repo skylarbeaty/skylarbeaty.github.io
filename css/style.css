@@ -297,6 +297,7 @@ section{
     max-width: 30vw;
     padding: 1rem;
     align-self: center;
+    text-align: center;
 }
 
 .details-container{
