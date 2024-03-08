@@ -7,6 +7,8 @@
     --grey: #949191;
     --blue-hyper: #d0f5f7;
     --transparent: rgba(0, 0, 0, 0);
+    --light-btn: #344966;
+    --dark-btn: #7F96FF;
 }
 
 html{
@@ -238,7 +240,7 @@ section{
 }
 
 .btn-color-1, .btn-color-2{
-    border: var(--grey) 0.1rem solid;
+    border: var(--light-btn) 0.1rem solid;
 }
 
 .btn-color-1:hover, .btn-color-2:hover{
@@ -246,12 +248,13 @@ section{
 }
 
 .btn-color-1, .btn-color-2:hover{
-    background-color: var(--grey);
+    background-color: var(--light-btn);
     color: var(--white);
 }
 
 .btn-color-1:hover{
-    background: var(--black);
+    background: var(--dark-btn);
+    border: var(--dark-btn) 0.1rem solid;
 }
 
 .btn-color-2{
@@ -368,11 +371,6 @@ section{
     display: none;
 }
 
-/* .details-container .btn-container{
-    justify-content: flex-end;
-} */
-
-
 /* Education */
 
 #education .section-h1{
@@ -416,13 +414,12 @@ section{
 #about .section-container{
     display: flex;
     justify-content: center;
-    gap: 5rem;
+    gap: 3rem;
 }
 
 #about .pic-container img{
     border-radius: 5%;
     width: 300px;
-    /* height: 500px; */
     object-fit: cover;
 }
 
@@ -438,4 +435,38 @@ section{
     width: 500px;
 }
 
+/* CONTACT */
+
+#contact{
+    height: 500px;
+}
+
+#contact .section-container{
+    justify-content: center;
+    margin: 5rem auto;
+}
+
+.contact-border{
+    border-radius: 2rem;
+    border: var(--black) 0.1rem solid;
+    border-color: var(--black);
+    margin: 2rem, auto;
+    padding: 0.5rem;
+}
+
+.contact-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7rem;
+    margin: 1rem;
+}
+
+.mail-icon{
+    height: 1.8rem;
+}
+
+.contact-container p{
+    font-size: 1.7rem;
+}
 /* #endregion */
