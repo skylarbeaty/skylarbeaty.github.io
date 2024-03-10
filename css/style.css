@@ -445,7 +445,7 @@ section{
 
 #contact .section-container{
     justify-content: center;
-    margin: 5rem auto;
+    margin: 7.5rem auto;
 }
 
 .contact-border{
@@ -474,11 +474,6 @@ section{
 /* #endregion */
 
 /* #region write ups */
-
-/* #beastro-body{
-    align-items: center;
-    justify-content: center;
-} */
 
 #beastro-body .section-container{
     display: block;
@@ -528,6 +523,10 @@ section{
 
 #phase-drift-body li{
     margin: 0 1.5rem;
+}
+
+#phase-drift-body iframe{
+    padding: 0.5rem 0;
 }
 
 /* #endregion */
