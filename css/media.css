@@ -3,7 +3,8 @@
         display: grid;
     }
     #about .section-text{
-        width: 90%
+        width: 90%;
+        justify-self: center;
     }
     #about .pic-container{
         justify-self: center;
