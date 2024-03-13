@@ -1,146 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- bootstrap CSS --> <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <!-- JQuery --> <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <!-- Bootstrap JS --> <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-
-    <link rel="stylesheet" href="css/portfolio.css">
-    <script src="js/gif.js"></script>
-</head>
-<body>
-    <header>
-        <title>Skylar Beaty's Portfolio</title>
-    </header>
-    <div class="row">
-        <div class="col-lg-3"></div>
-        <div class="col-lg-6">
-            <div class="main-header">
-                <h2>Skylar Beaty</h2>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="Game development portfolio of Skylar Elizabeth Beaty">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/media.css">
+        <title>Skylar Liz Portfolio</title>
+    </head>
+    <body>
+        <nav id="desktop-nav">
+            <div class="name">Skylar Liz</div>
+            <div>
+                <ul class="nav-links">
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
             </div>
-            <div class="main-body">
-                <h3><em>Projects</em></h3>
-                <div class="row project-row">
-                    <span>
-                        <img class="project-image project-image-right" src="images/PathfindingThumb.png" alt="Pathfinding Thumbnail">
-                        <h4>
-                            2D Pathfinding with Unity Tilemap
-                        </h4>
-                        <p>
-                            I implemented a 2D pathfinding system in Unity that uses a tilemap grid. Instead of needing a specialized tool for creating a grid to run pathfind on, this uses the existing geometry. Used an A* pathfinding algorithm for random point to point paths, and a special implementation of Djikstra’s algorithm for many paths to or from the same point.
-                        </p>
-                        <p>
-                            <a href= "pathfinding.html">Read the write up and see the code</a>
-                        </p>
-                    </span>
+        </nav>
+        <nav id="mobile-nav">
+            <div class="name">Skylar Liz</div>
+            <div class="mobile-menu">
+                <div class="hamburger-icon" onclick="toggleHamburger()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
-                <div class="row project-row">
-                    <span>
-                        <img class="project-image project-image-left" src="images/BeastroThumb.png" alt="Beastro Thumbnail">
-                        <h4>
-                            Beastro
-                        </h4>
-                        <p>
-                            A restaurant management game where you hunt and farm the ingredients. This was my capstone project for the Game Programming sequence at Kent State. Taking this as a remote course posed some interesting challenges. With excellent coordination we were able to deliver a large project over one semester.
-                        </p>
-                        <p>
-                            <a href= "beastro.html">Read more about Beastro and see code</a>
-                        </p>
-                    </span>
+                <div class="mobile-links">
+                    <li><a href="#projects" onclick="toggleHamburger()">Projects</a></li>
+                    <li><a href="#education" onclick="toggleHamburger()">Education</a></li>
+                    <li><a href="#about" onclick="toggleHamburger()">About</a></li>
+                    <li><a href="#contact" onclick="toggleHamburger()">Contact</a></li>
                 </div>
-                <div class="row project-row">
-                    <span>
-                        <img onclick="loadGIF(this)" id="images/PhaseDriftGIF.gif" class="project-image project-image-right" src="images/PhaseDriftGIFThumb.png" alt="Phase Drift GIF">
-                        <h4>
-                            Phase Drift
-                        </h4>
-                        <p>
-                            An arcade shooter, designed around mobile friendly controls, where you play on new stages every run. 
-                            It was released on the App Store and
-                            Google Play with integration of services on both platforms.
-                        </p>
-                        <p>
-                            The procedural levels work by intelligently pasting pixel textures on top of eachother, and using that to spawn the levels enemies. 
-                            The Implementation of the user interface makes use of Unity's scriptable objects in order to work with the procedurally generated shops and levels.
-                        </p>
-                        <p>
-                            <a href= "phase-drift.html">Read more about Phase Drift and see code</a>
-                        </p>
-                    </span>
-                </div>
-                <div class="row project-row">
-                    <span>
-                        <img onclick="loadGIF(this)" id="images/NuclearProcGenGIF.gif" class="project-image project-image-left" src="images/NuclearProcGIFThumb.png" alt="Procedural Generation GIF">
-                        <h4>
-                            Procedural Generation
-                        </h4>
-                        <p>I’ve created several different methods of procedurally generating levels, including custom solutions for my own projects, 
-                            like I did for Phase Drift. I’ve also recreated methods from popular games, like
-                            <a href="https://github.com/skylarbeaty/spelunky-style-procedural-generation"> Spelunky</a>, 
-                            <a href="https://github.com/skylarbeaty/binding-of-isaac-style-procedural-generation"> The Binding of Isaac,</a> and 
-                            <a href="https://github.com/skylarbeaty/ProceduralGenerationOfNuclearThrone">Nuclear Throne.</a>
-                        </p>
-                        <p>
-                            I continually come back to procedural generation as an area of study, exploring different ways it can be done. Nuclear Throne uses a 
-                            random walker (pictured), while Spelunky and Isaac rely on mixing templates with rules for how “rooms” connect. Phase Drift has a template system 
-                            that was made specially for it. There are areas of proc gen I have been studying that I hope to implement at some point, like 
-                            Wave Function Collapse or Hybrid Systems with both procedural and hand craft elements. I have a special interest in roles that allow me 
-                            to explore this niche.
-                        </p>
-                    </span>
-                </div>
-                <div class="row">
-                    <span>
-                        <img onclick="loadGIF(this)" id="images/CurvedWorldGIF.gif" class="project-image project-image-right" src="images/CurvedWordGIFThumb.png" alt="Curved World GIF">
-                        <h4>
-                            Other Work
-                        </h4>
-                        <p>
-                            I have many different projects from game-jams, hackathons, coursework, and personal projects. Help two birds find their way through a hedge maze in 
-                            <a href = "https://buffering13.itch.io/two-in-a-bush">Two in a Bush</a>. Stack up ridiculously large sandwiches in 
-                            <a href = "https://buffering13.itch.io/disaster-deli">Disaster Deli</a>. See my publishied games on my 
-                            <a href = "https://buffering13.itch.io/">Itch</a> page, and other work on my 
-                            <a href = "https://github.com/skylarbeaty">GitHub</a>.
-                        </p>
-                        <p>
-                            The GIF here is a <a href="https://github.com/skylarbeaty/curved-world"> Curved World</a> shader, 
-                            which mimics an effect in Animal Crossing, and other games. It displaces the vertices of the meshes along a parabola while rendering. 
-                            I have hooks into the shader to customize that parabola, which allows for rounding and softening the curvature at different camera angles.
-                        </p>
-                    </span>
-                </div>
-                
-                
-
             </div>
-            <div class="main-education">
-                <h3><em>Education</em></h3><br>
-                <h4>Kent State University</h4><br>
-                <p><b>May 2021</b> <em>Bachelor of Computer Science</em></p>
-                <p>
-                    Took game focused courses such as Game Programming, Computer Graphics, Artificial Intelligence, and Game Engine Concepts. Learned and applied agile development in Software Engineering. Studied various techniques like memory management, version control, and design patterns over the course of my degree.
-                </p><br>
-                <h4>Cuyahoga Community College</h4><br>
-                <p><b>May 2018</b> <em>Associate of Science</em></p>
-                <p>
-                    Most of my time here was getting non-programming requirements completed for my Computer Science degree before going to KSU. I also took several classes on Game Design, as well as courses on visual asset creation and 3d modelling.
-                </p>
+        </nav>
+        <section id="hero">
+            <div class="pic-container">
+                <image src="media/profile-pic-circle.png" alt="picture of Skylar Liz"></image>
             </div>
-            <div class="main-body">
-                <h3><em>Contact</em></h3>
-                <h5>The best way to contact is by email</h5>
-                <a href = "mailto: skylarbeaty93@gmail.com"><p><em>skylarbeaty93@gmail.com</em></p></a>
-                <!-- <p>If you're looking for something less direct. My Twitter is <em>mostly</em> developer focussed.</p>
-                <a href="https://twitter.com/skylarbeaty"><p><em>@skylarbeaty</em></p></a> -->
-                
-                <br><br>
-
-                &#169; 2021 Skylar Beaty
+            <div class="hero-text">
+                <p class="section-p1">Hello World,</p>
+                <h1 class="section-h1">Skylar Liz Beaty</h1>
+                <p class="section-p2">Game Programmer</p>
+                <div class="btn-container">
+                    <button class="btn btn-color-2" onclick="window.open('media/Resume-Skylar-Liz-Beaty.pdf')">Résumé</button>
+                    <button class="btn btn-color-1" onclick="location.href='#contact'">Contact</button>
+                </div>
+                <div id="social-container">
+                    <a href="https://nebula-gamer.itch.io">
+                        <img src="media/itchio-logo.png" alt="itch.io link" class="icon">
+                    </a>
+                    <a href="https://github.com/skylarbeaty">
+                        <img src="media/github-logo.png" alt="github link" class="icon">
+                    </a>
+                    <a href="https://twitter.com/skylarbeaty">
+                        <img src="media/twitter-logo.png" alt="twitter link" class="icon">
+                    </a>
+                </div>
             </div>
-        </div>
-        <div class="col-lg-3"></div>
-    </div>
-</body>
+        </section>
+        <section id="projects">
+            <p class="section-p1">See some of my</p>
+            <h1 class="section-h1">Projects</h1>
+            <div class="section-container">
+                <div class="text-container">
+                    <p>My most recent project, <b>Conventional Vampires</b>, is part of the Queer Vampire Game Jam on itch.io. It’s a dating sim about someone who goes to a Halloween Convention and quickly gets caught up in the affairs of real vampires attending the con. I led an interdisciplinary team of 15 writers, artists, programmers, and others, to complete the game in a little over a month. I did a majority of the programming, I ran weekly spring meetings with the full team, made documentation for important systems, and I also did a couple one-on-one meetings when another programmer needed unblocking.</p><br>
+                    <p>The most polished solo project I’ve made has to be <b>Phase Drift</b>, a space shoot 'em up game, designed around basic one button controls. This was made as a three month long project for the last class in the Game Design sequence at Tri-C. The prompt was to make a game throughout the semester, and we were encouraged to upload it publicly at the end. I made it my challenge to make an Android game, with platform integration and monetization by the end of the project. It was later uploaded to iOS and recently Itch.io</p>
+                </div>
+                <div class="pic-container">
+                    <img class="preload" src="media/highlights.gif" alt="highlights gif">
+                </div>
+            </div>
+            <div class="section-container">
+                <div class="details-container">
+                    <div class="project-thumb">
+                        <img class="gif-swap" src="media/phase-drift-thumb.gif" alt="Project thumb">
+                        <img class="still-swap" src="media/phase-drift-thumb-still.png" alt="Project thumb">
+                    </div>
+                    <div class="project-text">
+                        <h2 class="project-name">Phase Drift</h2>
+                        <p>Arcade space shooter, with new stages every time you play.</p>
+                    </div>
+                    <div class="btn-container">
+                        <a href="phase-drift-write-up.html"><button class="btn btn-color-2">Write up</button></a>
+                        <a href="https://nebula-gamer.itch.io/phase-drift"><button class="btn btn-color-1">Play</button></a>
+                    </div>
+                </div>
+                <div class="details-container">
+                    <div class="project-thumb">
+                        <img class="gif-swap" src="media/conventional-vampires-thumb.gif" alt="Project thumb">
+                        <img class="still-swap" src="media/conventional-vampires-thumb-still.png" alt="Project thumb">
+                    </div>
+                    <div class="project-text">
+                        <h2 class="project-name">Conventional Vampires</h2>
+                        <p>A dating sim where you run into real vampires at a convention</p>
+                    </div>
+                    <div class="btn-container">
+                        <a href="https://tedsybear.itch.io/conventional-vampires"><button class="btn btn-color-1">Play</button></a>
+                    </div>
+                </div>
+                <div class="details-container">
+                    <div class="project-thumb">
+                        <img class="gif-swap" src="media/beastro-thumb.gif" alt="Project thumb">
+                        <img class="still-swap" src="media/beastro-thumb-still.png" alt="Project thumb">
+                    </div>
+                    <div class="project-text">
+                        <h2 class="project-name">Beastro</h2>
+                        <p>Resturant simulator made with nine other programmers in Game Development Practicum</p>
+                    </div>
+                    <div class="btn-container">
+                        <a href="beastro-write-up.html"><button class="btn btn-color-1">Write Up</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="section-container">
+                <div class="details-container">
+                    <div class="project-thumb">
+                        <img class="gif-swap" src="media/curved-world-thumb.gif" alt="Project thumb">
+                        <img class="still-swap" src="media/curverd-world-thumb-still.png" alt="Project thumb">
+                    </div>
+                    <div class="project-text">
+                        <h2 class="project-name">Curved World</h2>
+                        <p>Animal Corssing case study. Recreating their world curving shader and camera controller</p>
+                    </div>
+                    <div class="btn-container">
+                        <a href="https://github.com/skylarbeaty/curved-world"><button class="btn btn-color-1">Github</button></a>
+                    </div>
+                </div>
+                <div class="details-container">
+                    <div class="project-thumb">
+                        <a href=""><img class="gif-swap" src="media/pathfinding-thumb-2.gif" alt="Project thumb"></a>
+                        <a href=""><img class="still-swap" src="media/pathfinding-thumb-still-2.png" alt="Project thumb"></a>
+                    </div>
+                    <div class="project-text">
+                        <h2 class="project-name">Tilemap Pathfinding</h2>
+                        <p>Pathfinding implementation that makes use of the existing tilemap system in Unity</p>
+                    </div>
+                    <div class="btn-container">
+                        <a href="https://github.com/skylarbeaty/tilemapPathfinding"><button class="btn btn-color-1">Github</button></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="education">
+            <p class="section-p1">learn about my</p>
+            <h1 class="section-h1">Education</h1>
+            <div class="section-container">
+                <div class="pic-container">
+                    <img src="media/joystick-and-buttons.jpg" alt="picture of arcade joystick and buttons">
+                </div>
+                <div class="section-text">
+                    <h1>Kent State University</h1>
+                    <h4>May 2021 Bachelor of Computer Science</h4>
+                    <p>Took game focused courses such as Game Programming, Computer Graphics, Artificial Intelligence, and Game Engine Concepts. Learned and applied agile development and SCRUM in Software Engineering. Studied various techniques like memory management, version control, and design patterns over the course of my degree.</p>
+                    <h1>Cuyahoga Community College</h1>
+                    <h4>May 2018 Associate of Science</h4>
+                    <p>Took several game design courses where I made quick game projects, iterating on prototypes based on playtest feedback. I took part in an art showcase where I had custom versions of my games running on an arcade cabinet one of the professors built. I also studied 3D modeling, animation, digital media creation, calculus and physics.</p>
+                </div>
+            </div>
+        </section>
+        <section id="about">
+            <p class="section-p1">Get to know more</p>
+            <h1 class="section-h1">About Me</h1>
+            <div class="section-container">
+                <div class="section-text">
+                    <p>Hi ^.^ most people call me Liz. I’ve been making games for about as long as I can remember. I started programming when I was around 12 with Game Maker and GML. Over the years I’ve used a bunch of tools and languages. I’ve been using Unity long enough now that it has gone from numbered release names, to year based release names and is now going back to numbered release names (i.e. 10 years). </p>
+                    <p>I really enjoy gameplay programming, especially making prototypes that iterate on play testing feedback. I’m a huge fan of any game that feels great to play, and I try to make games that are juicy and tactile. I also love working with procedural generation and graphics programming.</p>
+                    <p>When I’m not programming I tend to play a lot of games. I have a weekly Blades in the Dark campaign going on right now. I regularly host board gaming nights. I also run an Ubuntu server to run game servers and automation. I love to go to museums; I’m a member of the NE Ohio Queer Museum Goers. While traveling recently, I was able to see The Broad and the Getty Villa.</p>
+                </div>
+                <div class="pic-container">
+                    <img class="museum-goers-pic" src="media/museum-goers.jpg" alt="picture of museum goers">
+                </div>
+                <div class="pic-container">
+                    <img src="media/dice-tray.jpg" alt="picture of dice tray">
+                </div>
+            </div>
+        </section>
+        <section id="contact">
+            <p class="section-p1">The best way to</p>
+            <h1 class="section-h1">Contact Me</h1>
+            <div class="section-container">
+                <div class="contact-border">
+                    <div class="contact-container">
+                        <img class="mail-icon" src="media/gmail-icon.png" alt="email icon">
+                        <p><a href="mailto: skylarbeaty93@gmail.com">skylarbeaty93@gmail.com</href></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script src="js/nav.js" async defer></script>
+    </body>
 </html>

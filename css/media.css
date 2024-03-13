@@ -1,0 +1,93 @@
+@media screen and (max-width: 1700px){
+    #about .section-container{
+        display: grid;
+    }
+    #about .section-text{
+        width: 90%;
+        justify-self: center;
+    }
+    #about .pic-container{
+        justify-self: center;
+    }
+    .section-h1{
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 0;
+    }
+    #projects{
+        width: 100vw;
+        margin: 0;
+    }
+}
+@media screen and (max-width: 1300px){
+    #desktop-nav{
+        display: none;
+    }
+    #mobile-nav{
+        display: flex;
+    }
+    .section-text, .section-text, .pic-container, .details-container, .section-container, #hero, #education .section-container, #about .section-container{
+        display: grid;
+        /* flex: none; */
+    }
+    #hero{
+        min-height: 1200px;
+        gap: 4rem;
+    }
+    #projects .text-container, .snippet{
+        max-width: 90vw;
+        width: 90vw;
+    }
+    .details-container{
+        width: 450px;
+        height: 500px;
+    }
+    #projects .pic-container, #education .pic-container, #about .pic-container, #phase-drift-body img, .snippet, .section-text{
+        justify-self: center;
+    }
+    #projects {
+        height: 4000px;
+    }
+    .section-text, #about .section-text, #phase-drift-body img, #beastro-body img{
+        width: 90%;
+    }
+    #body, #phase-drift-body .section-container, #beastro-body .section-container{
+        width: 100vw;
+        margin: 0;
+    }
+    #phase-drift-body iframe{
+        width: 90vw;
+    }
+}
+
+/* @media screen and (max-width: 700px){
+    #hero{
+        min-height: 800px;
+        gap: 1rem;
+        padding: 0;
+        margin: 0;
+    }
+    #hero .pic-container{
+        display: grid;
+        justify-content: center;
+        margin: none;
+        height: 300px;
+    }
+    #hero .pic-container img{
+        justify: center;
+        width: 400px;
+        height: 400px;
+    }
+    .section-p1, .section-h1{
+        width: 90vw;
+        text-align: center;
+        justify: center;
+        align-self: center;
+    }
+} */
+
+/* @media screen and (max-midth: 600px){
+    .btn-container{
+        flex-wrap: wrap;
+    }
+} */
