@@ -59,7 +59,32 @@
         width: 90vw;
     }
 }
-
+@media screen and (max-width:650px){
+    #hero, #education, #about, #contact{
+        margin: 0;
+        padding: 0.2rem;
+    }
+    #hero{
+        gap: 0.2rem;
+        min-height: 600px;
+        height: 800px;
+        justify-content: center;
+        align-items: center;
+    }
+    #hero .pic-container{
+        width: 90vw;
+        height: 90vw;
+    }
+    #projects {
+        height: 4200px;
+    }
+    #education{
+        height: 1200px;
+    }
+    #about{
+        height: 1900px;
+    }
+}
 /* @media screen and (max-width: 700px){
     #hero{
         min-height: 800px;
