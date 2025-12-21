@@ -2,8 +2,10 @@
 
 :root{
     --black: #343434;
-    --white: #fff9f9;
-    --light-grey: #F7EEEE;
+    /* --white: #fff9f9; */
+    /* --light-grey: #F7EEEE; */
+    --white: #fcf6ff;
+    --light-grey: #e5dbea;
     --grey: #949191;
     --blue-hyper: #d0f5f7;
     --transparent: rgba(0, 0, 0, 0);
@@ -189,6 +191,10 @@ section{
     margin: auto 0;
 }
 
+#hero .pic-container img{
+    border-radius: 50%;
+}
+
 .hero-text{
     align-self: center;
     text-align: center;
@@ -295,8 +301,8 @@ section{
 }
 
 #projects .text-container{
-    max-width: 30vw;
-    padding: 1rem;
+    max-width: 18vw;
+    padding: 1.5rem;
     align-self: center;
     text-align: center;
 }
@@ -470,6 +476,10 @@ section{
 
 .contact-container p{
     font-size: 1.7rem;
+}
+
+#contact .section-container{
+    margin-top: 3rem;
 }
 /* #endregion */
 
